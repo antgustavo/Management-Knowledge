@@ -1,0 +1,11 @@
+streamlit 
+langchain 
+langchain-openai 
+langchain-ollama
+langchain-community
+langchain-text-splitters
+neo4j 
+python-dotenv
+numpy
+scikit-learn
+nltk
