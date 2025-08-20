@@ -1,4 +1,5 @@
 import streamlit as st
+from backend import *
 
 st.set_page_config(page_title="Consulta", page_icon="👤", layout="wide")
 
