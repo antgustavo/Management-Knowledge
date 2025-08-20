@@ -10,7 +10,7 @@ if not st.session_state.get('logged_in', False):
 
 # --- Conteúdo da Página ---
 st.title("Página de Consulta de Dados")
-st.write(f"Bem-vindo, {st.session_state.get('username', 'Usuário'.capitalize())}!")
+st.write(f"Bem-vindo, {st.session_state.get('username', 'Usuário').capitalize()}!")
 st.markdown("---")
 st.write("Esta é a área onde usuários padrão podem apenas visualizar informações.")
 

@@ -14,7 +14,7 @@ elif st.session_state.get('role') != 'adm':
 
 # --- Conteúdo da Página de Administração ---
 st.title("Painel de Administração")
-st.write(f"Bem-vindo, admin **{st.session_state.get('username')}**!")
+st.write(f"Bem-vindo, {st.session_state.get('username').capitalize()}!")
 st.markdown("---")
 
 # Seção para cadastrar novos usuários
@@ -23,11 +23,13 @@ st.subheader("Cadastrar Novo Usuário")
 with st.form("signup_form", clear_on_submit=True):
     new_username = st.text_input("Novo Usuário")
     new_password = st.text_input("Nova Senha", type="password")
-    new_role = st.selectbox("Nível de Acesso", ["padrão", "adm"])
+    new_role = st.selectbox("Nível de Acesso", ["Padrão", "Administrador"])
     signup_submitted = st.form_submit_button("Cadastrar")
 
     if signup_submitted:
         if new_username and new_password:
+            if new_role == "Administrador":
+                new_role = "adm"
             if db.adicionar_usuario(new_username, new_password, new_role):
                 st.success(f"Usuário '{new_username}' cadastrado com sucesso!")
             else:
