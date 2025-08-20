@@ -9,3 +9,4 @@ python-dotenv
 numpy
 scikit-learn
 nltk
+bcrypt
