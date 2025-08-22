@@ -1,6 +1,5 @@
 from langchain_openai import ChatOpenAI
-from langchain_community.graphs import Neo4jGraph
-from langchain.chains import GraphCypherQAChain
+from langchain_neo4j import Neo4jGraph, GraphCypherQAChain
 from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 import os
@@ -41,10 +40,11 @@ def CreateChain(graph, llm, CYPHER_GENERATION_PROMPT, QA_PROMPT):
     cypher_chain = GraphCypherQAChain.from_llm(
         llm=llm,
         graph=graph,
-        # cypher_prompt=CYPHER_GENERATION_PROMPT,
-        # qa_prompt=QA_PROMPT,
+        cypher_prompt=CYPHER_GENERATION_PROMPT,
+        qa_prompt=QA_PROMPT,
         allow_dangerous_requests=True,
         validate_cypher=True,
+        return_intermediate_steps = True
     )
     return cypher_chain
 
@@ -54,7 +54,7 @@ def CreateLLM(model, openai_api_key):
     """
     Cria um modelo de linguagem usando OpenAI.
     """
-    llm = ChatOpenAI(model=model, temperature=0, api_key=openai_api_key)
+    llm = ChatOpenAI(model=model, temperature=0.2, api_key=openai_api_key)
 
     CYPHER_GENERATION_TEMPLATE = """
     Você é um expert em Neo4j e Cypher. Dada uma pergunta em linguagem natural e um esquema de grafo,
@@ -65,11 +65,11 @@ def CreateLLM(model, openai_api_key):
     Esquema do Grafo:
     {schema}
 
-    Pergunta: {query}
+    Pergunta: {question}
     Query Cypher:
     """
     CYPHER_GENERATION_PROMPT = PromptTemplate(
-        input_variables=["schema", "query"], template=CYPHER_GENERATION_TEMPLATE
+        input_variables=["schema", "question"], template=CYPHER_GENERATION_TEMPLATE
     )
 
     # Este é o prompt para gerar a resposta final com base nos resultados da query
@@ -81,13 +81,14 @@ def CreateLLM(model, openai_api_key):
     1.  Sintetize os resultados em uma resposta útil e direta.
     2.  Se a lista no contexto contiver dados, extraia a informação e responda à pergunta.
     3.  Se a lista no contexto estiver vazia (`[]`), isso significa que nenhuma informação foi encontrada. Nesse caso, e somente nesse caso, diga: 'Não encontrei informações sobre isso no banco de dados.'
-    4.  Combine os resultados de forma natural. Por exemplo, se o resultado for `[{nome: 'Ana'}, {nome: 'Bruno'}]`, responda 'As pessoas encontradas foram Ana e Bruno.' e não o JSON cru.
+    4.  Combine os resultados de forma natural. Por exemplo, se o resultado for `{{nome: 'Ana'}}, {{nome: 'Bruno'}}`, responda 'As pessoas encontradas foram Ana e Bruno.' e não o JSON cru.
 
     Contexto:
     {context}
 
-    Pergunta: {query}
+    Pergunta: {question}
     Resposta útil:"""
-    QA_PROMPT = PromptTemplate(input_variables=["context", "query"], template=QA_TEMPLATE)
+
+    QA_PROMPT = PromptTemplate(input_variables=["context", "question"], template=QA_TEMPLATE)
     
     return llm, CYPHER_GENERATION_PROMPT, QA_PROMPT
