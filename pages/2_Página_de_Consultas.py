@@ -1,18 +1,5 @@
 import streamlit as st
 from backend import *
-import os
-from dotenv import load_dotenv
-
-# --- Carrega as variaveis de ambiente
-
-load_dotenv()
-
-uri = os.getenv("NEO4J_URI")
-username = os.getenv("NEO4J_USERNAME")
-password = os.getenv("NEO4J_PASSWORD")
-openai_api_key = os.getenv("OPENAI_API_KEY")
-model = "gpt-4"
-
 
 st.set_page_config(page_title="Consulta", page_icon="👤", layout="wide")
 

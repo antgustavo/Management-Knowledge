@@ -3,6 +3,7 @@ langchain
 langchain-openai 
 langchain-ollama
 langchain-community
+langchain-neo4j
 langchain-text-splitters
 neo4j 
 python-dotenv
