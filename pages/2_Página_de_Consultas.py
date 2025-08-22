@@ -1,5 +1,18 @@
 import streamlit as st
-from backend import chain
+from backend import *
+import os
+from dotenv import load_dotenv
+
+# --- Carrega as variaveis de ambiente
+
+load_dotenv()
+
+uri = os.getenv("NEO4J_URI")
+username = os.getenv("NEO4J_USERNAME")
+password = os.getenv("NEO4J_PASSWORD")
+openai_api_key = os.getenv("OPENAI_API_KEY")
+model = "gpt-4"
+
 
 st.set_page_config(page_title="Consulta", page_icon="👤", layout="wide")
 
@@ -26,6 +39,21 @@ Exemplos:
 
 # Campo de input para a pergunta do usuário
 user_question = st.text_input("Sua pergunta:", placeholder="Digite aqui...")
+
+# --- Conexão com o Grafo Neo4j ---
+# Conecta ao grafo Neo4j usando as credenciais do .env
+graph = ConnectToGraph(uri, username, password)
+
+# --- Criação do Modelo de LLM ---
+# Cria o modelo de linguagem com as credenciais do OpenAI
+llm, CYPHER_GENERATION_PROMPT, QA_PROMPT = CreateLLM(model, openai_api_key)
+
+# --- Criação da Cadeia de Perguntas e Respostas ---
+# Cria a cadeia de perguntas e respostas usando o grafo e o modelo LLM
+chain = CreateChain(graph, llm, CYPHER_GENERATION_PROMPT, QA_PROMPT)
+
+# --- Processamento da Pergunta do Usuário ---
+# Se o usuário fez uma pergunta, processa a consulta
 
 if user_question:
     # Mostra um spinner de carregamento enquanto a consulta está sendo processada
