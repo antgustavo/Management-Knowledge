@@ -12,7 +12,7 @@ uri = os.getenv("NEO4J_URI")
 username = os.getenv("NEO4J_USERNAME")
 password = os.getenv("NEO4J_PASSWORD")
 openai_api_key = os.getenv("OPENAI_API_KEY")
-model = "gpt-4"
+model = "gpt-5-mini"
 
 # --- Conexao com o Neo4j
 
@@ -61,6 +61,21 @@ def CreateLLM(model, openai_api_key):
     gere uma query Cypher para responder à pergunta. NÃO RESPONDA A PERGUNTA, apenas gere a query.
     Não use exemplos na query, apenas o que for necessário com base na pergunta e no esquema.
     Não coloque a query dentro de blocos de código markdown. Retorne apenas a query Cypher.
+    
+    Se a pergunta contiver termos que não batem exatamente com os valores armazenados no grafo,
+    gere uma query Cypher que use buscas parciais ou flexíveis:
+    
+    - Sempre normalize comparações de texto com `toLower()`. 
+    - Se possível, use `CONTAINS` ou `IN` para capturar sinônimos e variações.
+    - Nunca use igualdade exata em strings de status ou categorias.
+    - Quando comparar datas, sempre converta strings para date()/datetime().
+     Exemplo: Para `após 2022`, use date(prop) > date('2022-12-31') (ou >= date('2023-01-01')).
+    - Nunca compare datas como strings simples (ex.: '2022').
+    - Se houver sinônimos possíveis (ex: 'conf' e 'conferência', 'artigo' e 'publicacao/publicação'), considere ambos.
+    - Considere erros de grafia e acentuações.
+    - Atente-se para SIGLAS (ex: USP é o mesmo que Universidade de São Paulo, ITA e Instituto Tecnológico de Aeronáutica).
+    - Evite depender de igualdade exata para strings.
+
 
     Esquema do Grafo:
     {schema}
@@ -78,16 +93,20 @@ def CreateLLM(model, openai_api_key):
     O contexto abaixo está em formato de lista de dicionários (JSON), que é o resultado da consulta.
 
     **Instruções Importantes:**
-    1.  Sintetize os resultados em uma resposta útil e direta.
-    2.  Se a lista no contexto contiver dados, extraia a informação e responda à pergunta.
-    3.  Se a lista no contexto estiver vazia (`[]`), isso significa que nenhuma informação foi encontrada. Nesse caso, e somente nesse caso, diga: 'Não encontrei informações sobre isso no banco de dados.'
-    4.  Combine os resultados de forma natural. Por exemplo, se o resultado for `{{nome: 'Ana'}}, {{nome: 'Bruno'}}`, responda 'As pessoas encontradas foram Ana e Bruno.' e não o JSON cru.
+    1.  Se a lista no contexto estiver vazia (`[]`), responda exatamente: 'Não encontrei informações sobre isso no banco de dados.'
+    2.  Caso contrário, leia as chaves e valores retornados no JSON e use-os para montar uma resposta em português claro.
+    3.  Se houver múltiplos resultados, combine-os de forma natural, sem repetir estrutura JSON. 
+    4.  Exemplo: se o contexto for
+       `[{{"Projeto": "Sistema X", "Responsavel": "Maria Silva"}}, {{"Projeto": "Sistema Y", "Responsavel": "João Souza"}}]`
+       você deve responder algo como:
+       "Os projetos Sistema X (responsável: Maria Silva) e Sistema Y (responsável: João Souza) possuem documentação publicada após 2022."
 
     Contexto:
     {context}
 
     Pergunta: {question}
     Resposta útil:"""
+
 
     QA_PROMPT = PromptTemplate(input_variables=["context", "question"], template=QA_TEMPLATE)
     
