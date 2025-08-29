@@ -1,0 +1,572 @@
+[
+  {
+    "question": "Quais militares com patente de Major possuem a competência 'Gestão de Projetos'?",
+    "gold_cypher": "MATCH (p:Pessoa {patentePessoa:'Major'})-[:TEM_COMPETENCIA]->(c:Competencia {nomeCompetencia:'Gestão de Projetos'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Os militares com patente de Major que possuem a competência Gestão de Projetos incluem Militar 33 (P-033) e Militar 66 (P-066).",
+    "id": 1
+  },
+  {
+    "question": "Quais projetos utilizam a tecnologia PostgreSQL e estão em andamento?",
+    "gold_cypher": "MATCH (p:Projeto {statusProjeto:'Em andamento'})-[:UTILIZA_TECNOLOGIA]->(t:Tecnologia {nomeTecnologia:'PostgreSQL'}) RETURN p.idProjeto, p.nomeProjeto",
+    "gold_answer": "Os projetos em andamento que utilizam a tecnologia PostgreSQL são PRJ-005 (Manutenção Preditiva) e PRJ-009 (C2 Unificado).",
+    "id": 2
+  },
+  {
+    "question": "Quais militares com patente de Coronel são responsáveis por documentação?",
+    "gold_cypher": "MATCH (p:Pessoa {patentePessoa:'Coronel'})-[:RESPONSAVEL_POR]->(d:Documentacao) RETURN p.idPessoa, p.nomePessoa, d.tituloDocumentacao",
+    "gold_answer": "Alguns coronéis, como Militar 70 (P-070), são responsáveis por documentos como o Guia de Manutenção.",
+    "id": 3
+  },
+  {
+    "question": "Quais projetos concluídos possuem documentação crítica de nível ALTA?",
+    "gold_cypher": "MATCH (p:Projeto {statusProjeto:'Concluído'})-[:POSSUI_DOCUMENTACAO {eProjetoCritico:'ALTA'}]->(d:Documentacao) RETURN p.idProjeto, p.nomeProjeto, d.tituloDocumentacao",
+    "gold_answer": "Entre os projetos concluídos, o Radar XBR-3 (PRJ-002) possui documentação crítica de nível ALTA vinculada ao Manual Radar XBR-3.",
+    "id": 4
+  },
+  {
+    "question": "Quais militares possuem certificação PMP?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:POSSUI_CERTIFICACAO]->(c:Certificacao {nomeCertificacao:'PMP'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Militares como Militar 14 (P-014) e Militar 35 (P-035) possuem a certificação PMP.",
+    "id": 5
+  },
+  {
+    "question": "Quais treinamentos foram concluídos por militares de patente Capitão?",
+    "gold_cypher": "MATCH (p:Pessoa {patentePessoa:'Capitão'})-[:CONCLUIU_TREINAMENTO]->(t:Treinamento) WHERE t.dataFimTreinamento < date() RETURN p.idPessoa, p.nomePessoa, t.nomeTreinamento",
+    "gold_answer": "Capitães como Militar 53 concluíram treinamentos como Criptografia Aplicada e IA/ML Básico.",
+    "id": 6
+  },
+  {
+    "question": "Quais competências são requeridas pelo projeto 'Simulador de Voo IA'?",
+    "gold_cypher": "MATCH (p:Projeto {nomeProjeto:'Simulador de Voo IA'})-[:REQUER_COMPETENCIA]->(c:Competencia) RETURN c.nomeCompetencia, c.descricaoCompetencia",
+    "gold_answer": "O projeto Simulador de Voo IA requer competências como Programação e Teste e Integração.",
+    "id": 7
+  },
+  {
+    "question": "Quais militares ativos são mentores de outros militares?",
+    "gold_cypher": "MATCH (m:Pessoa {statusPessoa:'Ativo'})-[:MENTOR_DE]->(x:Pessoa) RETURN m.idPessoa, m.nomePessoa, x.idPessoa, x.nomePessoa",
+    "gold_answer": "Militares ativos como Militar 10 (P-010) atuam como mentores de Militar 11 (P-011).",
+    "id": 8
+  },
+  {
+    "question": "Quais tecnologias são dominadas por militares com patente de 1º Tenente?",
+    "gold_cypher": "MATCH (p:Pessoa {patentePessoa:'1º Tenente'})-[:DOMINA_TECNOLOGIA]->(t:Tecnologia) RETURN p.idPessoa, p.nomePessoa, t.nomeTecnologia",
+    "gold_answer": "Os 1º Tenentes dominam tecnologias como Python, MATLAB e CUDA, dependendo da distribuição.",
+    "id": 9
+  },
+  {
+    "question": "Quais projetos requerem o conhecimento de Criptografia?",
+    "gold_cypher": "MATCH (p:Projeto)-[:REQUER_CONHECIMENTO]->(k:Conhecimento {nomeConhecimento:'Criptografia'}) RETURN p.idProjeto, p.nomeProjeto",
+    "gold_answer": "Projetos como Link-Dados Tático (PRJ-003) e Guerra Eletrônica Lite (PRJ-006) requerem conhecimento de Criptografia.",
+    "id": 10
+  },
+  {
+    "question": "Quais militares possuem publicações em conferências?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:POSSUI_PUBLICACAO]->(pb:Publicacao) WHERE pb.veiculoPublicacao CONTAINS 'Conf' RETURN p.idPessoa, p.nomePessoa, pb.tituloPublicacao",
+    "gold_answer": "Militares como Militar 22 publicaram no veículo Conf ComDef com o artigo Datalink criptografado de baixa latência.",
+    "id": 11
+  },
+  {
+    "question": "Quais projetos utilizam simultaneamente Neo4j e OpenCV?",
+    "gold_cypher": "MATCH (p:Projeto)-[:UTILIZA_TECNOLOGIA]->(t1:Tecnologia {nomeTecnologia:'Neo4j'}),(p)-[:UTILIZA_TECNOLOGIA]->(t2:Tecnologia {nomeTecnologia:'OpenCV'}) RETURN p.idProjeto, p.nomeProjeto",
+    "gold_answer": "O projeto Autopiloto Seguro (PRJ-010) utiliza simultaneamente Neo4j e OpenCV.",
+    "id": 12
+  },
+  {
+    "question": "Quais processos possuem documentação crítica?",
+    "gold_cypher": "MATCH (pr:Processo)-[:POSSUI_DOCUMENTACAO {eProcessoCritico:true}]->(d:Documentacao) RETURN pr.nomeProcesso, d.tituloDocumentacao",
+    "gold_answer": "O processo Abastecimento de Aeronaves possui documentação crítica vinculada ao Guia de Manutenção.",
+    "id": 13
+  },
+  {
+    "question": "Quais militares possuem tanto pós-graduação quanto certificação?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:POSSUI_POS]->(pg:PosGraduacao),(p)-[:POSSUI_CERTIFICACAO]->(c:Certificacao) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Militares como Militar 8 (P-008) possuem tanto pós-graduação quanto certificações como PMP ou CEH.",
+    "id": 14
+  },
+  {
+    "question": "Quais projetos em andamento utilizam Python?",
+    "gold_cypher": "MATCH (p:Projeto {statusProjeto:'Em andamento'})-[:UTILIZA_TECNOLOGIA]->(t:Tecnologia {nomeTecnologia:'Python'}) RETURN p.idProjeto, p.nomeProjeto",
+    "gold_answer": "O projeto Manutenção Preditiva (PRJ-005) utiliza Python e está em andamento.",
+    "id": 15
+  },
+  {
+    "question": "Quais sumários estão vinculados a publicações?",
+    "gold_cypher": "MATCH (s:Sumario)<-[:POSSUI_SUMARIO]-(pb:Publicacao) RETURN s.idSumario, s.nomeSumario, pb.tituloPublicacao",
+    "gold_answer": "O Resumo Radar está vinculado à publicação ELINT eficiente em plataformas leves, e o Resumo Datalink à publicação Datalink criptografado de baixa latência.",
+    "id": 16
+  },
+  {
+    "question": "Quais militares afastados ainda possuem competências técnicas?",
+    "gold_cypher": "MATCH (p:Pessoa {statusPessoa:'Afastado'})-[:TEM_COMPETENCIA]->(c:Competencia {tipoCompentecia:'Técnica'}) RETURN p.idPessoa, p.nomePessoa, c.nomeCompetencia",
+    "gold_answer": "Alguns militares afastados, como Militar 17, ainda possuem competências técnicas como Programação e Análise de Sinais.",
+    "id": 17
+  },
+  {
+    "question": "Quais projetos planejam utilizar CUDA?",
+    "gold_cypher": "MATCH (p:Projeto {statusProjeto:'Planejado'})-[:UTILIZA_TECNOLOGIA]->(t:Tecnologia {nomeTecnologia:'CUDA'}) RETURN p.idProjeto, p.nomeProjeto",
+    "gold_answer": "O projeto Autopiloto Seguro (PRJ-010), em planejamento, utilizará CUDA.",
+    "id": 18
+  },
+  {
+    "question": "Quais militares possuem graduação em Aviação?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:POSSUI_GRADUACAO]->(g:Graduacao {cursoGraduacao:'Tecnólogo em Aviação'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Alguns militares, como Militar 3 (P-003), possuem graduação em Tecnólogo em Aviação.",
+    "id": 19
+  },
+  {
+    "question": "Quais pesquisas estão vinculadas ao projeto 'Guerra Eletrônica Lite'?",
+    "gold_cypher": "MATCH (pe:Pesquisa {vinculoProjetoPesquisa:'PRJ-006'}) RETURN pe.idPesquisa, pe.temaPesquisa",
+    "gold_answer": "A pesquisa ELINT em Baixa Potência (PESQ-002) está vinculada ao projeto Guerra Eletrônica Lite.",
+    "id": 20
+  },
+  {
+    "question": "Quais militares concluíram o treinamento IA/ML Básico?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:CONCLUIU_TREINAMENTO]->(t:Treinamento {nomeTreinamento:'IA/ML Básico'}) WHERE t.dataFimTreinamento < date() RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Militares como Militar 25 concluíram o treinamento IA/ML Básico oferecido pelo ITA.",
+    "id": 21
+  },
+  {
+    "question": "Quais publicações foram feitas após 2023?",
+    "gold_cypher": "MATCH (pb:Publicacao) WHERE pb.anoPublicacao > 2023 RETURN pb.tituloPublicacao, pb.anoPublicacao",
+    "gold_answer": "As publicações Detecção preditiva em turbofans (2024), ELINT eficiente em plataformas leves (2025) e Verificação formal de autopiloto (2025) foram feitas após 2023.",
+    "id": 22
+  },
+  {
+    "question": "Quais projetos concluídos utilizaram MATLAB?",
+    "gold_cypher": "MATCH (p:Projeto {statusProjeto:'Concluído'})-[:UTILIZA_TECNOLOGIA]->(t:Tecnologia {nomeTecnologia:'MATLAB'}) RETURN p.idProjeto, p.nomeProjeto",
+    "gold_answer": "Nenhum projeto concluído utilizou MATLAB, apenas projetos planejados ou em andamento.",
+    "id": 23
+  },
+  {
+    "question": "Quais militares com patente de 3º Sargento possuem competência de Programação?",
+    "gold_cypher": "MATCH (p:Pessoa {patentePessoa:'3º Sargento'})-[:TEM_COMPETENCIA]->(c:Competencia {nomeCompetencia:'Programação'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Alguns 3º Sargentos, como Militar 5 (P-005), possuem a competência de Programação.",
+    "id": 24
+  },
+  {
+    "question": "Quais militares atuaram como responsáveis por documentação publicada em 2024?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:RESPONSAVEL_POR]->(d:Documentacao) WHERE d.dataAtualizacao >= date('2024-01-01') RETURN p.idPessoa, p.nomePessoa, d.tituloDocumentacao",
+    "gold_answer": "Militares como Militar 21 (P-021) e Militar 28 (P-028) atuaram como responsáveis por documentos publicados em 2024, como o Manual Radar XBR-3.",
+    "id": 25
+  },
+  {
+    "question": "Quais militares possuem certificação emitida pela Cisco?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:POSSUI_CERTIFICACAO]->(c:Certificacao {emissorCertificacao:'Cisco'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Militares como Militar 7 (P-007) e Militar 28 (P-028) possuem a certificação Cisco CCNA.",
+    "id": 26
+  },
+  {
+    "question": "Quais projetos em andamento utilizam tanto Python quanto PostgreSQL?",
+    "gold_cypher": "MATCH (p:Projeto {statusProjeto:'Em andamento'})-[:UTILIZA_TECNOLOGIA]->(t1:Tecnologia {nomeTecnologia:'Python'}),(p)-[:UTILIZA_TECNOLOGIA]->(t2:Tecnologia {nomeTecnologia:'PostgreSQL'}) RETURN p.idProjeto, p.nomeProjeto",
+    "gold_answer": "O projeto Manutenção Preditiva (PRJ-005) utiliza Python e PostgreSQL simultaneamente.",
+    "id": 27
+  },
+  {
+    "question": "Quais militares possuem o conhecimento de Aviónica?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:POSSUI_CONHECIMENTO]->(k:Conhecimento {nomeConhecimento:'Aviónica'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Militares como Militar 2 (P-002) e Militar 6 (P-006) possuem conhecimento em Aviónica.",
+    "id": 28
+  },
+  {
+    "question": "Quais pesquisas estão relacionadas ao projeto 'Autopiloto Seguro'?",
+    "gold_cypher": "MATCH (pe:Pesquisa {vinculoProjetoPesquisa:'PRJ-010'}) RETURN pe.idPesquisa, pe.temaPesquisa",
+    "gold_answer": "As pesquisas Cripto Pós-Quântica (PESQ-004) e Verificação Formal (PESQ-007) estão relacionadas ao projeto Autopiloto Seguro.",
+    "id": 29
+  },
+  {
+    "question": "Quais militares com patente de Tenente-Coronel são mentores?",
+    "gold_cypher": "MATCH (p:Pessoa {patentePessoa:'Tenente-Coronel'})-[:MENTOR_DE]->(m:Pessoa) RETURN p.idPessoa, p.nomePessoa, m.idPessoa, m.nomePessoa",
+    "gold_answer": "Militares Tenente-Coronel como Militar 68 (P-068) atuam como mentores de outros militares.",
+    "id": 30
+  },
+  {
+    "question": "Quais documentos estão associados ao projeto Radar XBR-3?",
+    "gold_cypher": "MATCH (p:Projeto {nomeProjeto:'Radar XBR-3'})-[:POSSUI_DOCUMENTACAO]->(d:Documentacao) RETURN d.idDocumentacao, d.tituloDocumentacao",
+    "gold_answer": "O projeto Radar XBR-3 possui o documento Manual Radar XBR-3 (DOC-001) associado.",
+    "id": 31
+  },
+  {
+    "question": "Quais tecnologias foram certificadas pela certificação Cisco CCNA?",
+    "gold_cypher": "MATCH (c:Certificacao {nomeCertificacao:'Cisco CCNA'})-[:CERTIFICA]->(t:Tecnologia) RETURN t.nomeTecnologia",
+    "gold_answer": "A certificação Cisco CCNA certifica a tecnologia PostgreSQL.",
+    "id": 32
+  },
+  {
+    "question": "Quais militares concluíram o treinamento em Aviónica?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:CONCLUIU_TREINAMENTO]->(t:Treinamento {nomeTreinamento:'Aviónica'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Militares como Militar 12 (P-012) concluíram o treinamento de Aviónica em 2024.",
+    "id": 33
+  },
+  {
+    "question": "Quais competências são críticas para o projeto C2 Unificado?",
+    "gold_cypher": "MATCH (p:Projeto {nomeProjeto:'C2 Unificado'})-[:REQUER_COMPETENCIA {criticidade:true}]->(c:Competencia) RETURN c.nomeCompetencia",
+    "gold_answer": "O projeto C2 Unificado requer competências críticas como Segurança da Informação e Análise de Sinais.",
+    "id": 34
+  },
+  {
+    "question": "Quais militares possuem publicações com palavras-chave 'ELINT'?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:POSSUI_PUBLICACAO]->(pb:Publicacao) WHERE pb.palavrasChavePublicacao CONTAINS 'ELINT' RETURN p.idPessoa, p.nomePessoa, pb.tituloPublicacao",
+    "gold_answer": "Militares como Militar 19 (P-019) publicaram o artigo ELINT eficiente em plataformas leves em 2025.",
+    "id": 35
+  },
+  {
+    "question": "Quais processos possuem documentação armazenada no Hangar H1?",
+    "gold_cypher": "MATCH (pr:Processo)-[:POSSUI_DOCUMENTACAO]->(d:Documentacao {localDocumentacao:'Hangar H1'}) RETURN pr.nomeProcesso, d.tituloDocumentacao",
+    "gold_answer": "O processo Abastecimento de Aeronaves possui documentação armazenada no Hangar H1 (Guia de Manutenção).",
+    "id": 36
+  },
+  {
+    "question": "Quais projetos concluídos estão vinculados a pesquisas?",
+    "gold_cypher": "MATCH (p:Projeto {statusProjeto:'Concluído'}), (pe:Pesquisa) WHERE p.idProjeto = pe.vinculoProjetoPesquisa RETURN p.idProjeto, p.nomeProjeto",
+    "gold_answer": "Projetos concluídos como Link-Dados Tático (PRJ-003) e SatCom Defesa (PRJ-007) estão vinculados a pesquisas.",
+    "id": 37
+  },
+  {
+    "question": "Quais militares são cientistas de dados e dominam Neo4j?",
+    "gold_cypher": "MATCH (p:Pessoa {cargoPessoa:'Cientista de Dados'})-[:DOMINA_TECNOLOGIA]->(t:Tecnologia {nomeTecnologia:'Neo4j'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Militares como Militar 6 (P-006) e Militar 11 (P-011) dominam Neo4j e atuam como cientistas de dados.",
+    "id": 38
+  },
+  {
+    "question": "Quais competências possuem avaliação avançada em militares de patente Coronel?",
+    "gold_cypher": "MATCH (p:Pessoa {patentePessoa:'Coronel'})-[:TEM_COMPETENCIA {nivel:'Avançado'}]->(c:Competencia) RETURN c.nomeCompetencia",
+    "gold_answer": "Coronéis possuem avaliação avançada em competências como Liderança e Gestão de Projetos.",
+    "id": 39
+  },
+  {
+    "question": "Quais projetos possuem orçamento acima de 3 milhões?",
+    "gold_cypher": "MATCH (p:Projeto) WHERE p.orcamentoProjeto > 3000000 RETURN p.idProjeto, p.nomeProjeto, p.orcamentoProjeto",
+    "gold_answer": "Projetos como Radar XBR-3 (PRJ-002) e C2 Unificado (PRJ-009) possuem orçamento acima de 3 milhões.",
+    "id": 40
+  },
+  {
+    "question": "Quais pessoas ativos possuem graduação em Engenharia Elétrica?",
+    "gold_cypher": "MATCH (p:Pessoa {statusPessoa:'Ativo'})-[:POSSUI_GRADUACAO]->(g:Graduacao {cursoGraduacao:'Engenharia Elétrica'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Militares como Militar 2 (P-002) possuem graduação em Engenharia Elétrica e estão ativos.",
+    "id": 41
+  },
+  {
+    "question": "Quais projetos utilizam a tecnologia CUDA e estão planejados?",
+    "gold_cypher": "MATCH (p:Projeto {statusProjeto:'Planejado'})-[:UTILIZA_TECNOLOGIA]->(t:Tecnologia {nomeTecnologia:'CUDA'}) RETURN p.idProjeto, p.nomeProjeto",
+    "gold_answer": "O projeto Autopiloto Seguro (PRJ-010), planejado, utiliza CUDA.",
+    "id": 42
+  },
+  {
+    "question": "Quais publicações possuem DOI iniciando com '10.1000/abc5'?",
+    "gold_cypher": "MATCH (pb:Publicacao) WHERE pb.doiPublicacao STARTS WITH '10.1000/abc5' RETURN pb.tituloPublicacao, pb.doiPublicacao",
+    "gold_answer": "A publicação Verificação formal de autopiloto possui DOI 10.1000/abc5.",
+    "id": 43
+  },
+  {
+    "question": "Quais militares possuem tanto conhecimento em Criptografia quanto em IA/ML?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:POSSUI_CONHECIMENTO]->(k1:Conhecimento {nomeConhecimento:'Criptografia'}),(p)-[:POSSUI_CONHECIMENTO]->(k2:Conhecimento {nomeConhecimento:'IA/ML'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Alguns militares, como Militar 12 (P-012), possuem conhecimento tanto em Criptografia quanto em IA/ML.",
+    "id": 44
+  },
+  {
+    "question": "Quais treinamentos foram realizados no ITA?",
+    "gold_cypher": "MATCH (t:Treinamento {instituicaoTreinamento:'ITA'}) RETURN t.idTreinamento, t.nomeTreinamento",
+    "gold_answer": "O ITA ofereceu o treinamento IA/ML Básico em 2024.",
+    "id": 45
+  },
+  {
+    "question": "Quais documentos estão vinculados ao conhecimento de Manutenção Aeronáutica?",
+    "gold_cypher": "MATCH (k:Conhecimento {nomeConhecimento:'Manutenção Aeronáutica'})-[:POSSUI_DOCUMENTACAO]->(d:Documentacao) RETURN d.idDocumentacao, d.tituloDocumentacao",
+    "gold_answer": "O conhecimento de Manutenção Aeronáutica está vinculado ao Guia de Manutenção (DOC-003).",
+    "id": 46
+  },
+  {
+    "question": "Quais militares foram indicados para o treinamento Criptografia Aplicada?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:INDICADO_PARA]->(t:Treinamento {nomeTreinamento:'Criptografia Aplicada'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Militares como Militar 2 (P-002) foram indicados para o treinamento Criptografia Aplicada em 2023.",
+    "id": 47
+  },
+  {
+    "question": "Quais militares de patente 2º Sargento possuem certificação CEH?",
+    "gold_cypher": "MATCH (p:Pessoa {patentePessoa:'2º Sargento'})-[:POSSUI_CERTIFICACAO]->(c:Certificacao {nomeCertificacao:'CEH'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Alguns 2º Sargentos, como Militar 15 (P-015), possuem a certificação CEH.",
+    "id": 48
+  },
+  {
+    "question": "Quais projetos concluídos estão relacionados ao conhecimento de Redes Táticas?",
+    "gold_cypher": "MATCH (p:Projeto {statusProjeto:'Concluído'})-[:REQUER_CONHECIMENTO]->(k:Conhecimento {nomeConhecimento:'Redes Táticas'}) RETURN p.idProjeto, p.nomeProjeto",
+    "gold_answer": "O projeto Link-Dados Tático (PRJ-003) concluído está relacionado ao conhecimento de Redes Táticas.",
+    "id": 49
+  },
+  {
+    "question": "Quais militares com patente de Capitão possuem competência de Segurança da Informação?",
+    "gold_cypher": "MATCH (p:Pessoa {patentePessoa:'Capitão'})-[:TEM_COMPETENCIA]->(c:Competencia {nomeCompetencia:'Segurança da Informação'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Capitães como Militar 55 (P-055) possuem a competência Segurança da Informação.",
+    "id": 50
+  },
+  {
+    "question": "Quais pesquisas estão ativas em 2025?",
+    "gold_cypher": "MATCH (pe:Pesquisa) WHERE pe.dataInicioPesquisa <= date('2025-01-01') AND pe.dataFimPesquisa >= date('2025-01-01') RETURN pe.idPesquisa, pe.temaPesquisa",
+    "gold_answer": "Pesquisas como ELINT em Baixa Potência (PESQ-002) e SIGINT em Borda (PESQ-006) estão ativas em 2025.",
+    "id": 51
+  },
+  {
+    "question": "Quais militares possuem pós-graduação em Gestão?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:POSSUI_POS]->(pg:PosGraduacao {areaPosGraduacao:'Gestão'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Militares como Militar 8 (P-008) possuem MBA em Gestão de Projetos.",
+    "id": 52
+  },
+  {
+    "question": "Quais projetos utilizam tecnologias de banco de dados?",
+    "gold_cypher": "MATCH (p:Projeto)-[:UTILIZA_TECNOLOGIA]->(t:Tecnologia {categoriaTecnologia:'Banco de Dados'}) RETURN DISTINCT p.idProjeto, p.nomeProjeto",
+    "gold_answer": "Projetos como C2 Unificado (PRJ-009) e Manutenção Preditiva (PRJ-005) utilizam PostgreSQL e Neo4j.",
+    "id": 53
+  },
+  {
+    "question": "Quais militares publicaram em 2025?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:POSSUI_PUBLICACAO]->(pb:Publicacao) WHERE pb.anoPublicacao=2025 RETURN p.idPessoa, p.nomePessoa, pb.tituloPublicacao",
+    "gold_answer": "Militares como Militar 19 publicaram ELINT eficiente em plataformas leves e Militar 25 publicou Verificação formal de autopiloto em 2025.",
+    "id": 54
+  },
+  {
+    "question": "Quais documentos estão vinculados ao processo Despacho de Voo?",
+    "gold_cypher": "MATCH (pr:Processo {nomeProcesso:'Despacho de Voo'})-[:POSSUI_DOCUMENTACAO]->(d:Documentacao) RETURN d.idDocumentacao, d.tituloDocumentacao",
+    "gold_answer": "O processo Despacho de Voo está vinculado à Especificação Datalink (DOC-002).",
+    "id": 55
+  },
+  {
+    "question": "Quais militares ativos possuem certificações avançadas?",
+    "gold_cypher": "MATCH (p:Pessoa {statusPessoa:'Ativo'})-[:POSSUI_CERTIFICACAO]->(c:Certificacao {nivelDificuldadeCertificacao:'Avançado'}) RETURN p.idPessoa, p.nomePessoa, c.nomeCertificacao",
+    "gold_answer": "Militares ativos como Militar 20 (P-020) possuem certificações avançadas como PMP.",
+    "id": 56
+  },
+  {
+    "question": "Quais competências foram avaliadas como básicas em Sargentos?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:TEM_COMPETENCIA {nivel:'Básico'}]->(c:Competencia) WHERE p.patentePessoa CONTAINS 'Sargento' RETURN DISTINCT c.nomeCompetencia",
+    "gold_answer": "Entre sargentos, competências avaliadas como básicas incluem Programação e Análise de Sinais.",
+    "id": 57
+  },
+  {
+    "question": "Quais militares foram responsáveis pelo Guia de Manutenção?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:RESPONSAVEL_POR]->(d:Documentacao {tituloDocumentacao:'Guia de Manutenção'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Militares como Militar 28 (P-028) foram responsáveis pelo Guia de Manutenção.",
+    "id": 58
+  },
+  {
+    "question": "Quais projetos concluídos utilizaram Python?",
+    "gold_cypher": "MATCH (p:Projeto {statusProjeto:'Concluído'})-[:UTILIZA_TECNOLOGIA]->(t:Tecnologia {nomeTecnologia:'Python'}) RETURN p.idProjeto, p.nomeProjeto",
+    "gold_answer": "O projeto Link-Dados Tático (PRJ-003) utilizou Python e foi concluído em 2024.",
+    "id": 59
+  },
+  {
+    "question": "Quais sumários estão associados ao Manual Radar XBR-3?",
+    "gold_cypher": "MATCH (d:Documentacao {tituloDocumentacao:'Manual Radar XBR-3'})-[:POSSUI_SUMARIO]->(s:Sumario) RETURN s.idSumario, s.nomeSumario",
+    "gold_answer": "O Manual Radar XBR-3 está associado ao Resumo Radar (SUM-001).",
+    "id": 60
+  },
+  {
+    "question": "Quais militares possuem certificação Ethical Hacking?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:POSSUI_CERTIFICACAO]->(c:Certificacao {nomeCertificacao:'CEH'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Militares como Militar 7 (P-007) possuem certificação CEH emitida pela EC-Council.",
+    "id": 61
+  },
+  {
+    "question": "Quais projetos requerem simultaneamente conhecimentos de Aviónica e Guerra Eletrônica?",
+    "gold_cypher": "MATCH (p:Projeto)-[:REQUER_CONHECIMENTO]->(k1:Conhecimento {nomeConhecimento:'Aviónica'}),(p)-[:REQUER_CONHECIMENTO]->(k2:Conhecimento {nomeConhecimento:'Guerra Eletrônica'}) RETURN p.idProjeto, p.nomeProjeto",
+    "gold_answer": "O projeto Guerra Eletrônica Lite (PRJ-006) requer simultaneamente conhecimentos de Aviónica e Guerra Eletrônica.",
+    "id": 62
+  },
+  {
+    "question": "Quais militares foram indicados para treinamentos de Segurança da Informação?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:INDICADO_PARA]->(t:Treinamento {nomeTreinamento:'Segurança da Informação'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Militares como Militar 16 (P-016) foram indicados para o treinamento de Segurança da Informação no CINDACTA.",
+    "id": 63
+  },
+  {
+    "question": "Quais projetos utilizam o RTX Kernel?",
+    "gold_cypher": "MATCH (p:Projeto)-[:UTILIZA_TECNOLOGIA]->(t:Tecnologia {nomeTecnologia:'RTX Kernel'}) RETURN p.idProjeto, p.nomeProjeto",
+    "gold_answer": "Projetos como Simulador de Voo IA (PRJ-004) utilizam RTX Kernel.",
+    "id": 64
+  },
+  {
+    "question": "Quais publicações estão vinculadas a sumários?",
+    "gold_cypher": "MATCH (pb:Publicacao)-[:POSSUI_SUMARIO]->(s:Sumario) RETURN pb.tituloPublicacao, s.nomeSumario",
+    "gold_answer": "As publicações ELINT eficiente em plataformas leves e Datalink criptografado de baixa latência estão vinculadas a sumários Resumo Radar e Resumo Datalink.",
+    "id": 65
+  },
+  {
+    "question": "Quais militares de patente 1º Sargento possuem competência de Liderança?",
+    "gold_cypher": "MATCH (p:Pessoa {patentePessoa:'1º Sargento'})-[:TEM_COMPETENCIA]->(c:Competencia {nomeCompetencia:'Liderança'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Militares como Militar 35 (P-035) possuem a competência Liderança.",
+    "id": 66
+  },
+  {
+    "question": "Quais pesquisas foram concluídas em 2023?",
+    "gold_cypher": "MATCH (pe:Pesquisa) WHERE pe.dataFimPesquisa < date('2024-01-01') RETURN pe.idPesquisa, pe.temaPesquisa",
+    "gold_answer": "A pesquisa C2 Resiliente (PESQ-003) foi concluída em 2023.",
+    "id": 67
+  },
+  {
+    "question": "Quais militares com patente de Coronel possuem certificação PMP?",
+    "gold_cypher": "MATCH (p:Pessoa {patentePessoa:'Coronel'})-[:POSSUI_CERTIFICACAO]->(c:Certificacao {nomeCertificacao:'PMP'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Alguns coronéis, como Militar 70 (P-070), possuem certificação PMP.",
+    "id": 68
+  },
+  {
+    "question": "Quais projetos possuem documentação armazenada no Repositório A1?",
+    "gold_cypher": "MATCH (p:Projeto)-[:POSSUI_DOCUMENTACAO]->(d:Documentacao {localDocumentacao:'Repositório A1'}) RETURN p.idProjeto, p.nomeProjeto",
+    "gold_answer": "O projeto Radar XBR-3 (PRJ-002) possui documentação armazenada no Repositório A1.",
+    "id": 69
+  },
+  {
+    "question": "Quais militares dominam a tecnologia CUDA com nível igual ou superior a 4?",
+    "gold_cypher": "MATCH (p:Pessoa)-[r:DOMINA_TECNOLOGIA]->(t:Tecnologia {nomeTecnologia:'CUDA'}) WHERE r.nivel >= 4 RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Militares como Militar 9 (P-009) dominam CUDA com nível igual ou superior a 4.",
+    "id": 70
+  },
+  {
+    "question": "Quais projetos em andamento possuem orçamento inferior a 2 milhões?",
+    "gold_cypher": "MATCH (p:Projeto {statusProjeto:'Em andamento'}) WHERE p.orcamentoProjeto < 2000000 RETURN p.idProjeto, p.nomeProjeto",
+    "gold_answer": "Projetos em andamento como Manutenção Preditiva (PRJ-005) possuem orçamento inferior a 2 milhões.",
+    "id": 71
+  },
+  {
+    "question": "Quais militares de patente Major publicaram artigos?",
+    "gold_cypher": "MATCH (p:Pessoa {patentePessoa:'Major'})-[:POSSUI_PUBLICACAO]->(pb:Publicacao) RETURN p.idPessoa, p.nomePessoa, pb.tituloPublicacao",
+    "gold_answer": "Majores como Militar 66 (P-066) publicaram artigos como Verificação formal de autopiloto.",
+    "id": 72
+  },
+  {
+    "question": "Quais projetos requerem competência de Programação?",
+    "gold_cypher": "MATCH (p:Projeto)-[:REQUER_COMPETENCIA]->(c:Competencia {nomeCompetencia:'Programação'}) RETURN p.idProjeto, p.nomeProjeto",
+    "gold_answer": "Projetos como Simulador de Voo IA (PRJ-004) e Manutenção Preditiva (PRJ-005) requerem competência de Programação.",
+    "id": 73
+  },
+  {
+    "question": "Quais treinamentos foram realizados em modalidade EAD?",
+    "gold_cypher": "MATCH (t:Treinamento {modalidadeTreinamento:'EAD'}) RETURN t.idTreinamento, t.nomeTreinamento",
+    "gold_answer": "Treinamentos como Criptografia Aplicada, IA/ML Básico e Neo4j para Operações foram realizados em modalidade EAD.",
+    "id": 74
+  },
+  {
+    "question": "Quais militares concluíram a graduação no ITA?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:POSSUI_GRADUACAO]->(g:Graduacao {instituicaoGraduacao:'ITA'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Militares como Militar 1 (P-001) concluíram graduação no ITA.",
+    "id": 75
+  },
+  {
+    "question": "Quais projetos utilizam a tecnologia OpenCV?",
+    "gold_cypher": "MATCH (p:Projeto)-[:UTILIZA_TECNOLOGIA]->(t:Tecnologia {nomeTecnologia:'OpenCV'}) RETURN p.idProjeto, p.nomeProjeto",
+    "gold_answer": "Projetos como Autopiloto Seguro (PRJ-010) utilizam a tecnologia OpenCV.",
+    "id": 76
+  },
+  {
+    "question": "Quais militares ativos possuem conhecimento em IA/ML?",
+    "gold_cypher": "MATCH (p:Pessoa {statusPessoa:'Ativo'})-[:POSSUI_CONHECIMENTO]->(k:Conhecimento {nomeConhecimento:'IA/ML'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Militares ativos como Militar 12 (P-012) possuem conhecimento em IA/ML.",
+    "id": 77
+  },
+  {
+    "question": "Quais documentos foram atualizados após 2023?",
+    "gold_cypher": "MATCH (d:Documentacao) WHERE d.dataAtualizacao > date('2023-12-31') RETURN d.idDocumentacao, d.tituloDocumentacao",
+    "gold_answer": "Documentos como Guia de Manutenção (2025) e Manual Radar XBR-3 (2024) foram atualizados após 2023.",
+    "id": 78
+  },
+  {
+    "question": "Quais militares de patente 2º Tenente concluíram treinamentos?",
+    "gold_cypher": "MATCH (p:Pessoa {patentePessoa:'2º Tenente'})-[:CONCLUIU_TREINAMENTO]->(t:Treinamento) RETURN p.idPessoa, p.nomePessoa, t.nomeTreinamento",
+    "gold_answer": "2º Tenentes como Militar 47 (P-047) concluíram treinamentos como DSP aplicado e Operações SatCom.",
+    "id": 79
+  },
+  {
+    "question": "Quais competências são do tipo Gerencial?",
+    "gold_cypher": "MATCH (c:Competencia {tipoCompentecia:'Gerencial'}) RETURN c.nomeCompetencia",
+    "gold_answer": "A competência Gestão de Projetos é do tipo Gerencial.",
+    "id": 80
+  },
+  {
+    "question": "Quais militares atuam em pesquisas vinculadas ao projeto SatCom Defesa?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:TRABALHA_EM]->(pe:Pesquisa {vinculoProjetoPesquisa:'PRJ-007'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Militares como Militar 8 (P-008) atuam em pesquisas vinculadas ao projeto SatCom Defesa.",
+    "id": 81
+  },
+  {
+    "question": "Quais projetos utilizam Kafka?",
+    "gold_cypher": "MATCH (p:Projeto)-[:UTILIZA_TECNOLOGIA]->(t:Tecnologia {nomeTecnologia:'Kafka'}) RETURN p.idProjeto, p.nomeProjeto",
+    "gold_answer": "Projetos como Link-Dados Tático (PRJ-003) utilizam a tecnologia Kafka.",
+    "id": 82
+  },
+  {
+    "question": "Quais militares possuem tanto certificação Cisco CCNA quanto competência de Programação?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:POSSUI_CERTIFICACAO]->(c:Certificacao {nomeCertificacao:'Cisco CCNA'}),(p)-[:TEM_COMPETENCIA]->(cmp:Competencia {nomeCompetencia:'Programação'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Alguns militares, como Militar 7 (P-007), possuem Cisco CCNA e também competência em Programação.",
+    "id": 83
+  },
+  {
+    "question": "Quais projetos concluídos possuem pesquisas vinculadas a C2?",
+    "gold_cypher": "MATCH (pe:Pesquisa)-[:TRABALHA_EM*0..]->(p:Projeto {statusProjeto:'Concluído'}) WHERE pe.temaPesquisa CONTAINS 'C2' RETURN DISTINCT p.idProjeto, p.nomeProjeto",
+    "gold_answer": "O projeto C2 Unificado (PRJ-009) possui pesquisa vinculada ao tema C2 Resiliente.",
+    "id": 84
+  },
+  {
+    "question": "Quais militares de patente 3º Sargento são instrutores?",
+    "gold_cypher": "MATCH (p:Pessoa {patentePessoa:'3º Sargento', cargoPessoa:'Instrutor'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Alguns 3º Sargentos, como Militar 7 (P-007), são instrutores.",
+    "id": 85
+  },
+  {
+    "question": "Quais tecnologias são consideradas Core nos projetos?",
+    "gold_cypher": "MATCH (p:Projeto)-[r:UTILIZA_TECNOLOGIA {centralidade:'Core'}]->(t:Tecnologia) RETURN DISTINCT t.nomeTecnologia",
+    "gold_answer": "Tecnologias como PostgreSQL e Neo4j são consideradas Core nos projetos.",
+    "id": 86
+  },
+  {
+    "question": "Quais militares foram mentores desde 2024?",
+    "gold_cypher": "MATCH (p:Pessoa)-[m:MENTOR_DE]->(x:Pessoa) WHERE m.dataInicio >= date('2024-01-01') RETURN p.idPessoa, p.nomePessoa, x.idPessoa, x.nomePessoa",
+    "gold_answer": "Militares como Militar 10 (P-010) foram mentores de Militar 11 desde 2024.",
+    "id": 87
+  },
+  {
+    "question": "Quais projetos estão em andamento e utilizam MATLAB?",
+    "gold_cypher": "MATCH (p:Projeto {statusProjeto:'Em andamento'})-[:UTILIZA_TECNOLOGIA]->(t:Tecnologia {nomeTecnologia:'MATLAB'}) RETURN p.idProjeto, p.nomeProjeto",
+    "gold_answer": "Projetos em andamento como Radar XBR-3 (PRJ-002) utilizam MATLAB.",
+    "id": 88
+  },
+  {
+    "question": "Quais militares possuem graduação em Engenharia Aeronáutica?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:POSSUI_GRADUACAO]->(g:Graduacao {cursoGraduacao:'Engenharia Aeronáutica'}) RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Militares como Militar 4 (P-004) possuem graduação em Engenharia Aeronáutica.",
+    "id": 89
+  },
+  {
+    "question": "Quais documentos foram publicados em 2022?",
+    "gold_cypher": "MATCH (d:Documentacao) WHERE d.dataAtualizacao >= date('2022-01-01') AND d.dataAtualizacao <= date('2022-12-31') RETURN d.idDocumentacao, d.tituloDocumentacao",
+    "gold_answer": "Documentos como Especificação Datalink foram publicados em 2022.",
+    "id": 90
+  },
+  {
+    "question": "Quais militares possuem nível avançado em Análise de Sinais?",
+    "gold_cypher": "MATCH (p:Pessoa)-[r:TEM_COMPETENCIA]->(c:Competencia {nomeCompetencia:'Análise de Sinais'}) WHERE r.nivel='Avançado' RETURN p.idPessoa, p.nomePessoa",
+    "gold_answer": "Militares como Militar 14 (P-014) possuem nível avançado em Análise de Sinais.",
+    "id": 91
+  },
+  {
+    "question": "Quais projetos estão planejados para 2025?",
+    "gold_cypher": "MATCH (p:Projeto {statusProjeto:'Planejado'}) WHERE p.anoProjeto=2025 RETURN p.idProjeto, p.nomeProjeto",
+    "gold_answer": "Projetos como Autopiloto Seguro (PRJ-010) estão planejados para 2025.",
+    "id": 92
+  },
+  {
+    "question": "Quais militares são responsáveis por documentação no Repositório A1?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:RESPONSAVEL_POR]->(d:Documentacao {localDocumentacao:'Repositório A1'}) RETURN p.idPessoa, p.nomePessoa, d.tituloDocumentacao",
+    "gold_answer": "Militares como Militar 21 (P-021) são responsáveis por documentação no Repositório A1.",
+    "id": 93
+  },
+  {
+    "question": "Quais militares foram indicados para mais de um treinamento?",
+    "gold_cypher": "MATCH (p:Pessoa)-[:INDICADO_PARA]->(t:Treinamento) WITH p, COUNT(t) as qtd WHERE qtd > 1 RETURN p.idPessoa, p.nomePessoa, qtd",
+    "gold_answer": "Militares como Militar 18 (P-018) foram indicados para mais de um treinamento.",
+    "id": 94
+  },
+  {
+    "question": "Quais certificações possuem validade até 2025?",
+    "gold_cypher": "MATCH (c:Certificacao) WHERE c.dataValidadeCertificacao <= date('2025-12-31') RETURN c.nomeCertificacao, c.dataValidadeCertificacao",
+    "gold_answer": "Certificações como Cisco CCNA e PMP possuem validade até 2025.",
+    "id": 95
+  }
+]

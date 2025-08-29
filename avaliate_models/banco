@@ -1,0 +1,503 @@
+// ====================================================================
+// 0) CONSTRAINTS (do modelo)
+// ====================================================================
+CREATE CONSTRAINT idPessoa_Pessoa_uniq IF NOT EXISTS
+FOR (n:Pessoa) REQUIRE n.idPessoa IS UNIQUE;
+
+CREATE CONSTRAINT idProjeto_Projeto_uniq IF NOT EXISTS
+FOR (n:Projeto) REQUIRE n.idProjeto IS UNIQUE;
+
+CREATE CONSTRAINT idConhecimento_Conhecimento_uniq IF NOT EXISTS
+FOR (n:Conhecimento) REQUIRE n.idConhecimento IS UNIQUE;
+
+CREATE CONSTRAINT idCompetencia_Competencia_uniq IF NOT EXISTS
+FOR (n:Competencia) REQUIRE n.idCompetencia IS UNIQUE;
+
+CREATE CONSTRAINT idTecnologia_Tecnologia_uniq IF NOT EXISTS
+FOR (n:Tecnologia) REQUIRE n.idTecnologia IS UNIQUE;
+
+CREATE CONSTRAINT idDocumentacao_Documentacao_uniq IF NOT EXISTS
+FOR (n:Documentacao) REQUIRE n.idDocumentacao IS UNIQUE;
+
+CREATE CONSTRAINT idSumario_Sumario_uniq IF NOT EXISTS
+FOR (n:Sumario) REQUIRE n.idSumario IS UNIQUE;
+
+CREATE CONSTRAINT idTreinamento_Treinamento_uniq IF NOT EXISTS
+FOR (n:Treinamento) REQUIRE n.idTreinamento IS UNIQUE;
+
+CREATE CONSTRAINT idPesquisa_Pesquisa_uniq IF NOT EXISTS
+FOR (n:Pesquisa) REQUIRE n.idPesquisa IS UNIQUE;
+
+CREATE CONSTRAINT idPublicacao_Publicacao_uniq IF NOT EXISTS
+FOR (n:Publicacao) REQUIRE n.idPublicacao IS UNIQUE;
+
+CREATE CONSTRAINT idPosGraduacao_PosGraduacao_uniq IF NOT EXISTS
+FOR (n:PosGraduacao) REQUIRE n.idPosGraduacao IS UNIQUE;
+
+CREATE CONSTRAINT idGraduacao_Graduacao_uniq IF NOT EXISTS
+FOR (n:Graduacao) REQUIRE n.idGraduacao IS UNIQUE;
+
+CREATE CONSTRAINT idCertificacao_Certificacao_uniq IF NOT EXISTS
+FOR (n:Certificacao) REQUIRE n.idCertificacao IS UNIQUE;
+
+CREATE CONSTRAINT idProcesso_Processo_uniq IF NOT EXISTS
+FOR (n:Processo) REQUIRE n.idProcesso IS UNIQUE;
+
+// ====================================================================
+// 1) PROJETOS (declara TODOS os atributos)
+// ====================================================================
+WITH [
+  {id:'PRJ-001',nome:'SIS AeroNav',desc:'Sistema de navegação aérea embarcado',ini:date('2023-01-10'),fim:date('2025-06-30'),status:'Em andamento',orc:1500000.0},
+  {id:'PRJ-002',nome:'Radar XBR-3',desc:'Modernização de radar de vigilância',ini:date('2022-03-01'),fim:date('2026-12-15'),status:'Em andamento',orc:3200000.0},
+  {id:'PRJ-003',nome:'Link-Dados Tático',desc:'Datalink criptografado entre aeronaves',ini:date('2021-09-01'),fim:date('2024-12-31'),status:'Concluído',orc:950000.0},
+  {id:'PRJ-004',nome:'Simulador de Voo IA',desc:'Treinador com modelos generativos',ini:date('2023-07-05'),fim:date('2025-11-30'),status:'Em andamento',orc:2100000.0},
+  {id:'PRJ-005',nome:'Manutenção Preditiva',desc:'Analytics para motores turbofan',ini:date('2022-02-20'),fim:date('2025-09-01'),status:'Em andamento',orc:1750000.0},
+  {id:'PRJ-006',nome:'Guerra Eletrônica Lite',desc:'Biblioteca de sinais e contramedidas',ini:date('2024-02-01'),fim:date('2026-05-31'),status:'Planejado',orc:2700000.0},
+  {id:'PRJ-007',nome:'SatCom Defesa',desc:'Camada de comunicação satelital segura',ini:date('2021-04-10'),fim:date('2024-04-09'),status:'Concluído',orc:1200000.0},
+  {id:'PRJ-008',nome:'SIGINT Edge',desc:'Coleta/triagem de sinais em borda',ini:date('2023-10-01'),fim:date('2026-03-31'),status:'Em andamento',orc:2450000.0},
+  {id:'PRJ-009',nome:'C2 Unificado',desc:'Plataforma de comando e controle',ini:date('2022-08-15'),fim:date('2025-12-15'),status:'Em andamento',orc:3300000.0},
+  {id:'PRJ-010',nome:'Autopiloto Seguro',desc:'Autopiloto com verificação formal',ini:date('2024-01-15'),fim:date('2026-08-30'),status:'Planejado',orc:1950000.0}
+] AS prjs
+UNWIND prjs AS p
+MERGE (proj:Projeto {idProjeto:p.id})
+  ON CREATE SET
+    proj.nomeProjeto = p.nome,
+    proj.descricaoProjeto = p.desc,
+    proj.dataInicioProjeto = p.ini,
+    proj.dataFimProjeto = p.fim,
+    proj.statusProjeto = p.status,
+    proj.orcamentoProjeto = p.orcamento;
+
+// ====================================================================
+// 2) CONHECIMENTOS, COMPETÊNCIAS, TECNOLOGIAS (todos os atributos)
+// ====================================================================
+WITH [
+  {id:'CONH-001',nome:'Aerodinâmica',desc:'Princípios de voo e performance',cat:'Engenharia'},
+  {id:'CONH-002',nome:'Aviónica',desc:'Sistemas eletrônicos de aeronaves',cat:'Engenharia'},
+  {id:'CONH-003',nome:'Criptografia',desc:'Conceitos e protocolos',cat:'Segurança'},
+  {id:'CONH-004',nome:'Comando e Controle',desc:'Modelagem C2',cat:'Operações'},
+  {id:'CONH-005',nome:'Manutenção Aeronáutica',desc:'Motores e estruturas',cat:'Manutenção'},
+  {id:'CONH-006',nome:'Guerra Eletrônica',desc:'ESM/ECM/ELINT',cat:'Defesa'},
+  {id:'CONH-007',nome:'Telemetria',desc:'Coleta e transmissão',cat:'Sinais'},
+  {id:'CONH-008',nome:'IA/ML',desc:'Aprendizado de máquina',cat:'Computação'},
+  {id:'CONH-009',nome:'Redes Táticas',desc:'Enlaces de dados militares',cat:'Comunicações'},
+  {id:'CONH-010',nome:'Regulamentos Aeronáuticos',desc:'RBAC/ICAO',cat:'Normas'}
+] AS cons
+UNWIND cons AS c
+MERGE (k:Conhecimento {idConhecimento:c.id})
+  ON CREATE SET
+    k.nomeConhecimento = c.nome,
+    k.decricaoConhecimento = c.desc,
+    k.categoriaConhecimento = c.cat;
+
+WITH [
+  {id:'COMP-001',nome:'Liderança',desc:'Coordenação de equipes',tipo:'Comportamental'},
+  {id:'COMP-002',nome:'Gestão de Projetos',desc:'Planejamento e execução',tipo:'Gerencial'},
+  {id:'COMP-003',nome:'Análise de Sinais',desc:'Processamento DSP',tipo:'Técnica'},
+  {id:'COMP-004',nome:'Programação',desc:'Desenvolvimento de software',tipo:'Técnica'},
+  {id:'COMP-005',nome:'Teste e Integração',desc:'V&V de sistemas',tipo:'Técnica'},
+  {id:'COMP-006',nome:'Docência/Instrutoria',desc:'Ministrar treinamentos',tipo:'Comportamental'},
+  {id:'COMP-007',nome:'Pesquisa Científica',desc:'Métodos e ética',tipo:'Acadêmica'},
+  {id:'COMP-008',nome:'Segurança da Informação',desc:'Gestão de riscos',tipo:'Técnica'}
+] AS comps
+UNWIND comps AS c
+MERGE (co:Competencia {idCompetencia:c.id})
+  ON CREATE SET
+    co.nomeCompetencia = c.nome,
+    co.descricaoCompetencia = c.desc,
+    co.tipoCompentecia = c.tipo;
+
+WITH [
+  {id:'TEC-001',nome:'Python',ver:'3.11',desc:'Linguagem para prototipagem/ML',cat:'Software'},
+  {id:'TEC-002',nome:'MATLAB',ver:'R2024a',desc:'DSP/controle',cat:'Software'},
+  {id:'TEC-003',nome:'RTX Kernel',ver:'8.0',desc:'RTOS embarcado',cat:'Firmware'},
+  {id:'TEC-004',nome:'Kafka',ver:'3.7',desc:'Streaming tático',cat:'Plataforma'},
+  {id:'TEC-005',nome:'PostgreSQL',ver:'16',desc:'Banco relacional',cat:'Banco de Dados'},
+  {id:'TEC-006',nome:'Neo4j',ver:'5',desc:'Grafo operacional',cat:'Banco de Dados'},
+  {id:'TEC-007',nome:'CUDA',ver:'12',desc:'GPGPU',cat:'Aceleração'},
+  {id:'TEC-008',nome:'OpenCV',ver:'4.9',desc:'Visão computacional',cat:'Biblioteca'}
+] AS techs
+UNWIND techs AS t
+MERGE (te:Tecnologia {idTecnologia:t.id})
+  ON CREATE SET
+    te.nomeTecnologia = t.nome,
+    te.versaoTecnologia = t.ver,
+    te.descricaoTecnologia = t.desc,
+    te.categoriaTecnologia = t.cat;
+
+// ====================================================================
+// 3) DOCUMENTAÇÃO + SUMÁRIOS (todos os atributos) & PROCESSOS
+// ====================================================================
+WITH [
+  {id:'DOC-001',tit:'Manual Radar XBR-3',tipo:'Manual',desc:'Manual técnico do radar',dt:date('2024-05-10'),link:'https://intra/docs/xbr3',loc:'Repositório A1',ver:'1.2'},
+  {id:'DOC-002',tit:'Especificação Datalink',tipo:'Especificacao',desc:'Requisitos do enlace',dt:date('2023-11-02'),link:'https://intra/docs/dlk',loc:'Repositório B2',ver:'2.0'},
+  {id:'DOC-003',tit:'Guia de Manutenção',tipo:'Procedimento',desc:'Procedimentos de inspeção',dt:date('2025-02-20'),link:'https://intra/docs/man',loc:'Hangar H1',ver:'3.3'}
+] AS docs
+UNWIND docs AS d
+MERGE (doc:Documentacao {idDocumentacao:d.id})
+  ON CREATE SET
+    doc.tituloDocumentacao = d.tit,
+    doc.tipoDocumentacao = d.tipo,
+    doc.descricaoDocumentacao = d.desc,
+    doc.dataAtualizacao = d.dt,
+    doc.linkDocumentacao = d.link,
+    doc.localDocumentacao = d.loc,
+    doc.versaoDocumentacao = d.ver;
+
+WITH [
+  {id:'SUM-001',nome:'Resumo Radar',desc:'Sumário executivo',cont:'Pontos-chave do XBR-3'},
+  {id:'SUM-002',nome:'Resumo Datalink',desc:'Topologia e QoS',cont:'Restrições e KPIs'},
+  {id:'SUM-003',nome:'Resumo Manutenção',desc:'Preditivo',cont:'Modelos, falhas e alarmes'}
+] AS sums
+UNWIND sums AS s
+MERGE (su:Sumario {idSumario:s.id})
+  ON CREATE SET
+    su.nomeSumario = s.nome,
+    su.descricaoSumario = s.desc,
+    su.conteudoSumario = s.cont;
+
+// Vincula Sumários às Documentações (POSSUI_SUMARIO rt:11) e às Publicações mais adiante (rt:21)
+MATCH (d1:Documentacao {idDocumentacao:'DOC-001'}),(s1:Sumario {idSumario:'SUM-001'})
+MERGE (d1)-[:POSSUI_SUMARIO]->(s1);
+MATCH (d2:Documentacao {idDocumentacao:'DOC-002'}),(s2:Sumario {idSumario:'SUM-002'})
+MERGE (d2)-[:POSSUI_SUMARIO]->(s2);
+MATCH (d3:Documentacao {idDocumentacao:'DOC-003'}),(s3:Sumario {idSumario:'SUM-003'})
+MERGE (d3)-[:POSSUI_SUMARIO]->(s3);
+
+// Processos + Documentação (rt:23 com eProcessoCritico)
+WITH [
+  {id:'PROC-001',nome:'Abastecimento de Aeronaves',desc:'Fluxo de abastecimento',tipo:'Operacional',doc:'DOC-003',crit:true},
+  {id:'PROC-002',nome:'Despacho de Voo',desc:'Checklist e liberação',tipo:'Operacional',doc:'DOC-002',crit:false}
+] AS pr
+UNWIND pr AS p
+MERGE (pc:Processo {idProcesso:p.id})
+  ON CREATE SET
+    pc.nomeProcesso = p.nome,
+    pc.descricaoProcesso = p.desc,
+    pc.tipoProcesso = p.tipo
+WITH pr
+UNWIND pr AS p
+MATCH (pc:Processo {idProcesso:p.id}),(dc:Documentacao {idDocumentacao:p.doc})
+MERGE (pc)-[:POSSUI_DOCUMENTACAO {eProcessoCritico:p.crit}]->(dc);
+
+// Conhecimentos com Documentação (rt:10 eConhecimentoCritico)
+WITH [
+  {k:'CONH-002',doc:'DOC-001',crit:true},
+  {k:'CONH-009',doc:'DOC-002',crit:false},
+  {k:'CONH-005',doc:'DOC-003',crit:true}
+] AS kds
+UNWIND kds AS kd
+MATCH (k:Conhecimento {idConhecimento:kd.k}),(d:Documentacao {idDocumentacao:kd.doc})
+MERGE (k)-[:POSSUI_DOCUMENTACAO {eConhecimentoCritico:kd.crit}]->(d);
+
+// Projeto com Documentação (rt:22 eProjetoCritico STRING)
+WITH [
+  {p:'PRJ-002',doc:'DOC-001',crit:'ALTA'},
+  {p:'PRJ-003',doc:'DOC-002',crit:'MEDIA'},
+  {p:'PRJ-005',doc:'DOC-003',crit:'ALTA'}
+] AS pds
+UNWIND pds AS x
+MATCH (p:Projeto {idProjeto:x.p}),(d:Documentacao {idDocumentacao:x.doc})
+MERGE (p)-[:POSSUI_DOCUMENTACAO {eProjetoCritico:x.crit}]->(d);
+
+// ====================================================================
+// 4) TREINAMENTOS e PESQUISAS (todos os atributos)
+// ====================================================================
+WITH [
+  {id:'TR-001',nome:'Treinamento Radar',desc:'Operação XBR-3',carga:40,mod:'Presencial',ini:date('2024-01-15'),fim:date('2024-01-19'),inst:'CEAER'},
+  {id:'TR-002',nome:'Criptografia Aplicada',desc:'Protocolos militares',carga:24,mod:'EAD',ini:date('2023-10-05'),fim:date('2023-10-12'),inst:'ICA'},
+  {id:'TR-003',nome:'Manutenção Preditiva',desc:'Analytics de falhas',carga:32,mod:'Híbrido',ini:date('2024-06-03'),fim:date('2024-06-07'),inst:'DCTA'},
+  {id:'TR-004',nome:'C2 e Doutrina',desc:'Arquiteturas C2',carga:20,mod:'Presencial',ini:date('2023-08-10'),fim:date('2023-08-12'),inst:'ECEMAR'},
+  {id:'TR-005',nome:'IA/ML Básico',desc:'Fundamentos ML',carga:30,mod:'EAD',ini:date('2024-03-15'),fim:date('2024-03-22'),inst:'ITA'},
+  {id:'TR-006',nome:'Segurança da Informação',desc:'Gestão de riscos',carga:28,mod:'Presencial',ini:date('2024-04-10'),fim:date('2024-04-15'),inst:'CINDACTA'},
+  {id:'TR-007',nome:'DSP aplicado',desc:'Filtragem e FFT',carga:36,mod:'Presencial',ini:date('2023-11-20'),fim:date('2023-11-24'),inst:'IME'},
+  {id:'TR-008',nome:'Aviónica',desc:'Integração de sistemas',carga:40,mod:'Presencial',ini:date('2024-05-06'),fim:date('2024-05-10'),inst:'CTA'},
+  {id:'TR-009',nome:'Neo4j para Operações',desc:'Grafo em defesa',carga:16,mod:'EAD',ini:date('2024-02-01'),fim:date('2024-02-02'),inst:'EsAO'},
+  {id:'TR-010',nome:'Operações SatCom',desc:'Procedimentos de campo',carga:22,mod:'Híbrido',ini:date('2023-09-01'),fim:date('2023-09-04'),inst:'COp'}
+] AS trs
+UNWIND trs AS t
+MERGE (tr:Treinamento {idTreinamento:t.id})
+  ON CREATE SET
+    tr.nomeTreinamento = t.nome,
+    tr.descricaoTreinamento = t.desc,
+    tr.cargaHorariaTreinamento = t.carga,
+    tr.modalidadeTreinamento = t.mod,
+    tr.dataInicioTreinamento = t.ini,
+    tr.dataFimTreinamento = t.fim,
+    tr.instituicaoTreinamento = t.inst;
+
+WITH [
+  {id:'PESQ-001',tema:'IA para Detecção de Falhas',desc:'Modelos para motores',ini:date('2023-02-01'),fim:date('2024-12-20'),vinc:'PRJ-005'},
+  {id:'PESQ-002',tema:'ELINT em Baixa Potência',desc:'Coleta eficiente',ini:date('2022-05-15'),fim:date('2025-05-14'),vinc:'PRJ-006'},
+  {id:'PESQ-003',tema:'C2 Resiliente',desc:'Tolerante a falhas',ini:date('2021-01-10'),fim:date('2023-12-31'),vinc:'PRJ-009'},
+  {id:'PESQ-004',tema:'Cripto Pós-Quântica',desc:'Avaliação PQC',ini:date('2024-07-01'),fim:date('2026-06-30'),vinc:'PRJ-010'},
+  {id:'PESQ-005',tema:'Datalink de Baixa Latência',desc:'QoS e priorização',ini:date('2023-03-01'),fim:date('2025-03-01'),vinc:'PRJ-003'},
+  {id:'PESQ-006',tema:'SIGINT em Borda',desc:'Edge analytics',ini:date('2023-10-01'),fim:date('2026-03-31'),vinc:'PRJ-008'},
+  {id:'PESQ-007',tema:'Verificação Formal',desc:'Autopiloto crítico',ini:date('2024-01-15'),fim:date('2026-08-30'),vinc:'PRJ-010'},
+  {id:'PESQ-008',tema:'SatCom Seguro',desc:'Cripto e RF',ini:date('2021-04-10'),fim:date('2024-04-09'),vinc:'PRJ-007'}
+] AS ps
+UNWIND ps AS p
+MERGE (pe:Pesquisa {idPesquisa:p.id})
+  ON CREATE SET
+    pe.temaPesquisa = p.tema,
+    pe.descricaoPesquisa = p.desc,
+    pe.dataInicioPesquisa = p.ini,
+    pe.dataFimPesquisa = p.fim,
+    pe.vinculoProjetoPesquisa = p.vinc;
+
+// ====================================================================
+// 5) PUBLICAÇÕES, PÓS, GRADUAÇÕES, CERTIFICAÇÕES (todos atributos)
+// ====================================================================
+WITH [
+  {id:'PUB-001',tit:'Detecção preditiva em turbofans',aut:'A. Silva; B. Souza',veh:'Rev AeroDefesa',ano:2024,doi:'10.1000/abc1',kw:'preditiva; motores'},
+  {id:'PUB-002',tit:'Datalink criptografado de baixa latência',aut:'C. Lima; D. Ramos',veh:'Conf ComDef',ano:2023,doi:'10.1000/abc2',kw:'datalink; cripto'},
+  {id:'PUB-003',tit:'Arquiteturas C2 resilientes',aut:'E. Braga',veh:'Jnl C2 Systems',ano:2022,doi:'10.1000/abc3',kw:'C2; resiliência'},
+  {id:'PUB-004',tit:'ELINT eficiente em plataformas leves',aut:'F. Araujo; G. Nunes',veh:'SIGINT Letters',ano:2025,doi:'10.1000/abc4',kw:'ELINT; edge'},
+  {id:'PUB-005',tit:'Verificação formal de autopiloto',aut:'H. Cunha',veh:'Safety Systems',ano:2025,doi:'10.1000/abc5',kw:'verificação; autopiloto'}
+] AS pubs
+UNWIND pubs AS p
+MERGE (pb:Publicacao {idPublicacao:p.id})
+  ON CREATE SET
+    pb.tituloPublicacao = p.tit,
+    pb.autoresPublicacao = p.aut,
+    pb.veiculoPublicacao = p.veh,
+    pb.anoPublicacao = p.ano,
+    pb.doiPublicacao = p.doi,
+    pb.palavrasChavePublicacao = p.kw;
+
+// Vincula alguns Sumários às Publicações (rt:21)
+MATCH (s1:Sumario {idSumario:'SUM-001'}),(pb1:Publicacao {idPublicacao:'PUB-004'})
+MERGE (pb1)-[:POSSUI_SUMARIO]->(s1);
+MATCH (s2:Sumario {idSumario:'SUM-002'}),(pb2:Publicacao {idPublicacao:'PUB-002'})
+MERGE (pb2)-[:POSSUI_SUMARIO]->(s2);
+
+WITH [
+  {id:'POS-001',tit:'Mestrado em Engenharia Aeroespacial',inst:'ITA',area:'Engenharia',desc:'Voo e controles',ini:'2018-02-01',fim:'2020-02-01',tipo:'Mestrado'},
+  {id:'POS-002',tit:'MBA Gestão de Projetos',inst:'FGV',area:'Gestão',desc:'PMO e métricas',ini:'2019-03-01',fim:'2021-03-01',tipo:'MBA'}
+] AS poss
+UNWIND poss AS p
+MERGE (pg:PosGraduacao {idPosGraduacao:p.id})
+  ON CREATE SET
+    pg.tituloPosGraduacao = p.tit,
+    pg.instituicaoPosGraduacao = p.inst,
+    pg.areaPosGraduacao = p.area,
+    pg.descricaoPosGraduacao = p.desc,
+    pg.dataInicioPosGraduacao = p.ini,
+    pg.dataFimPosGraduacao = p.fim,
+    pg.tipoPosGraduacao = p.tipo;
+
+WITH [
+  {id:'GRAD-001',inst:'ITA',area:'Aeroespacial',desc:'Ênfase estrutura',ini:'2012-01-01',fim:'2016-12-01',curso:'Engenharia Aeronáutica'},
+  {id:'GRAD-002',inst:'IME',area:'Elétrica',desc:'Telecomunicações',ini:'2011-01-01',fim:'2015-12-01',curso:'Engenharia Elétrica'},
+  {id:'GRAD-003',inst:'UNIFA',area:'Aviação',desc:'Manutenção',ini:'2010-01-01',fim:'2014-12-01',curso:'Tecnólogo em Aviação'}
+] AS grads
+UNWIND grads AS g
+MERGE (gr:Graduacao {idGraduacao:g.id})
+  ON CREATE SET
+    gr.instituicaoGraduacao = g.inst,
+    gr.areaGraduacao = g.area,
+    gr.descricaoGraduacao = g.desc,
+    gr.dataInicioGraduacao = g.ini,
+    gr.dataFimGraduacao = g.fim,
+    gr.cursoGraduacao = g.curso;
+
+WITH [
+  {id:'CERT-001',nome:'CEH',desc:'Ethical Hacking',emissor:'EC-Council',nivel:'Intermediário',emissao:date('2023-05-10')},
+  {id:'CERT-002',nome:'PMP',desc:'Project Management Professional',emissor:'PMI',nivel:'Avançado',emissao:date('2022-09-15')},
+  {id:'CERT-003',nome:'Cisco CCNA',desc:'Rede e roteamento',emissor:'Cisco',nivel:'Intermediário',emissao:date('2021-04-20')}
+] AS certs
+UNWIND certs AS c
+MERGE (ce:Certificacao {idCertificacao:c.id})
+  ON CREATE SET
+    ce.nomeCertificacao = c.nome,
+    ce.descricaoCertificacao = c.desc,
+    ce.emissorCertificacao = c.emissor,
+    ce.nivelDificuldadeCertificacao = c.nivel,
+    ce.dataEmissao = c.emissao;
+
+// CERTIFICA (rt:19 e rt:20) amarrando conhecimentos/tecnologias
+MATCH (c1:Certificacao {idCertificacao:'CERT-001'}),(k1:Conhecimento {idConhecimento:'CONH-003'})
+MERGE (c1)-[:CERTIFICA]->(k1);
+MATCH (c2:Certificacao {idCertificacao:'CERT-002'}),(k2:Conhecimento {idConhecimento:'CONH-004'})
+MERGE (c2)-[:CERTIFICA]->(k2);
+MATCH (c3:Certificacao {idCertificacao:'CERT-003'}),(t1:Tecnologia {idTecnologia:'TEC-005'})
+MERGE (c3)-[:CERTIFICA]->(t1);
+
+// ====================================================================
+// 6) PESSOAS (~70 militares) – TODOS ATRIBUTOS (inclui patente)
+// ====================================================================
+WITH range(1,70) AS ids
+UNWIND ids AS i
+WITH i,
+     CASE
+       WHEN i <= 18 THEN '3º Sargento'
+       WHEN i <= 32 THEN '2º Sargento'
+       WHEN i <= 42 THEN '1º Sargento'
+       WHEN i <= 49 THEN '2º Tenente'
+       WHEN i <= 56 THEN '1º Tenente'
+       WHEN i <= 61 THEN 'Capitão'
+       WHEN i <= 66 THEN 'Major'
+       WHEN i <= 69 THEN 'Tenente-Coronel'
+       ELSE 'Coronel'
+     END AS patente,
+     CASE
+       WHEN i % 9 = 0 THEN 'Chefe de Projeto'
+       WHEN i % 9 = 1 THEN 'Analista de Sinais'
+       WHEN i % 9 = 2 THEN 'Engenheiro de Sistemas'
+       WHEN i % 9 = 3 THEN 'Especialista em Aviónica'
+       WHEN i % 9 = 4 THEN 'Operador C2'
+       WHEN i % 9 = 5 THEN 'Técnico de Manutenção'
+       WHEN i % 9 = 6 THEN 'Cientista de Dados'
+       WHEN i % 9 = 7 THEN 'Instrutor'
+       ELSE 'Criptoanalista'
+     END AS cargo
+MERGE (p:Pessoa {idPessoa: 'P-'+toString(i)})
+  ON CREATE SET
+    p.nomePessoa = 'Militar ' + toString(i),
+    p.dataAdmissaoPessoa = date('2015-01-01') + duration({months:i}),
+    p.emailPessoa = 'militar' + toString(i) + '@fab.mil.br',
+    p.cargoPessoa = cargo,
+    p.statusPessoa = CASE WHEN i % 17 = 0 THEN 'Afastado' ELSE 'Ativo' END,
+    p.patentePessoa = patente;
+
+// ====================================================================
+// 7) RELACIONAMENTOS (TODOS tipos do modelo + propriedades)
+// ====================================================================
+
+// 7.1 Pessoa TRABALHA_EM Projeto (rt:1)
+MATCH (p:Pessoa),(pr:Projeto)
+WHERE toInteger(substring(p.idPessoa,2)) % 10 = toInteger(right(pr.idProjeto,3)) % 10
+MERGE (p)-[:TRABALHA_EM {
+  dataInicio: date('2023-01-01'),
+  dataFim:    CASE WHEN pr.statusProjeto='Concluído' THEN date('2024-12-31') ELSE '' END,
+  funcao:     p.cargoPessoa,
+  dedicacaoPercentual: toString(10 + (toInteger(right(p.idPessoa,2)) % 60)),
+  dedicacaoHoraPorSemana: toString(10 + (toInteger(right(p.idPessoa,2)) % 30))
+}]->(pr);
+
+// 7.2 Projeto REQUER_COMPETENCIA (rt:4)
+MATCH (pr:Projeto),(c:Competencia)
+WHERE apoc.coll.contains(['PRJ-001','PRJ-002','PRJ-004','PRJ-005','PRJ-009'], pr.idProjeto)
+  AND c.idCompetencia IN ['COMP-002','COMP-003','COMP-004','COMP-005','COMP-008']
+MERGE (pr)-[:REQUER_COMPETENCIA {
+  importancia: CASE c.idCompetencia WHEN 'COMP-002' THEN 'Alta' ELSE 'Média' END,
+  contextoUtilizacao: 'Execução do ' + pr.nomeProjeto,
+  criticidade: c.idCompetencia IN ['COMP-003','COMP-008']
+}]->(c);
+
+// 7.3 Pessoa TEM_COMPETENCIA (rt:3)
+MATCH (p:Pessoa),(c:Competencia)
+WHERE toInteger(right(p.idPessoa,2)) % 3 = toInteger(right(c.idCompetencia,1)) % 3
+MERGE (p)-[:TEM_COMPETENCIA {
+  nivel: CASE WHEN p.patentePessoa IN ['Major','Tenente-Coronel','Coronel'] THEN 'Avançado'
+              WHEN p.patentePessoa IN ['Capitão','1º Tenente'] THEN 'Intermediário'
+              ELSE 'Básico' END,
+  dataAvaliacaoCompetencia: date('2025-06-01') - duration({days: (toInteger(right(p.idPessoa,2)) % 365)}),
+  ultimaUtilizacao: '2025-Q' + toString( (toInteger(right(p.idPessoa,2)) % 4) + 1 )
+}]->(c);
+
+// 7.4 Projeto REQUER_CONHECIMENTO (rt:7)
+MATCH (pr:Projeto),(k:Conhecimento)
+WHERE pr.idProjeto IN ['PRJ-003','PRJ-005','PRJ-006','PRJ-008','PRJ-010']
+  AND k.idConhecimento IN ['CONH-002','CONH-003','CONH-006','CONH-008','CONH-009']
+MERGE (pr)-[:REQUER_CONHECIMENTO {
+  importancia: 'Alta',
+  nivelNecessario: 4,
+  criticidade: true
+}]->(k);
+
+// 7.5 Pessoa POSSUI_CONHECIMENTO (rt:2)
+MATCH (p:Pessoa),(k:Conhecimento)
+WHERE toInteger(right(p.idPessoa,2)) % 4 = toInteger(right(k.idConhecimento,1)) % 4
+MERGE (p)-[:POSSUI_CONHECIMENTO {
+  nivel: CASE WHEN p.cargoPessoa IN ['Cientista de Dados','Engenheiro de Sistemas'] THEN 'Alto' ELSE 'Médio' END,
+  dataAquisicaoConhecimento: date('2019-01-01') + duration({months:toInteger(right(p.idPessoa,2))}),
+  ultimaUtilizacaoConhecimento: date('2025-05-01') - duration({days: toInteger(right(k.idConhecimento,1))*7}),
+  autoAvaliacao: 'Confortável',
+  avaliacaoGestor: CASE WHEN p.statusPessoa='Ativo' THEN 'Apto' ELSE 'Em avaliação' END
+}]->(k);
+
+// 7.6 Projeto UTILIZA_TECNOLOGIA (rt:6)
+MATCH (pr:Projeto),(t:Tecnologia)
+WHERE (pr.idProjeto IN ['PRJ-003','PRJ-005','PRJ-009'] AND t.idTecnologia IN ['TEC-001','TEC-004','TEC-005','TEC-006'])
+   OR (pr.idProjeto IN ['PRJ-004','PRJ-006','PRJ-010'] AND t.idTecnologia IN ['TEC-003','TEC-007','TEC-008'])
+MERGE (pr)-[:UTILIZA_TECNOLOGIA {
+  centralidade: CASE WHEN t.idTecnologia IN ['TEC-005','TEC-006'] THEN 'Core' ELSE 'Apoio' END,
+  versaoEspecifica: t.versaoTecnologia,
+  criticidade: CASE WHEN pr.statusProjeto='Concluído' THEN 'Baixa' ELSE 'Alta' END
+}]->(t);
+
+// 7.7 Pessoa DOMINA_TECNOLOGIA (rt:8)
+MATCH (p:Pessoa),(t:Tecnologia)
+WHERE toInteger(right(p.idPessoa,2)) % 5 = toInteger(right(t.idTecnologia,1)) % 5
+MERGE (p)-[:DOMINA_TECNOLOGIA {
+  nivel: 1 + (toInteger(right(p.idPessoa,2)) % 5),
+  experienciaAnos: 0.5 + (toInteger(right(p.idPessoa,2)) % 10),
+  ultimaUtilizacao: date('2025-07-01') - duration({days: toInteger(right(t.idTecnologia,1))*10})
+}]->(t);
+
+// 7.8 Pessoa RESPONSAVEL_POR Documentacao (rt:9)
+MATCH (p:Pessoa),(d:Documentacao)
+WHERE toInteger(right(p.idPessoa,2)) % 7 = toInteger(right(d.idDocumentacao,1)) % 3
+MERGE (p)-[:RESPONSAVEL_POR {
+  dataInicio: date('2024-01-01'),
+  dataFim: ''
+}]->(d);
+
+// 7.9 INDICADO_PARA e CONCLUIU_TREINAMENTO (rt:12 e rt:13)
+MATCH (p:Pessoa),(tr:Treinamento)
+WHERE toInteger(right(p.idPessoa,2)) % 3 = toInteger(right(tr.idTreinamento,1)) % 3
+MERGE (p)-[:INDICADO_PARA {
+  prioridadeIndicacao: 1 + (toInteger(right(p.idPessoa,2)) % 5),
+  motivoIndicacao: 'Plano de desenvolvimento'
+}]->(tr)
+MERGE (p)-[:CONCLUIU_TREINAMENTO {
+  dataConclusaoTreinamento: CASE WHEN tr.dataFimTreinamento < date() THEN tr.dataFimTreinamento ELSE '' END,
+  notaObtidaTreinamento: CASE WHEN tr.dataFimTreinamento < date() THEN 7.0 + (toInteger(right(p.idPessoa,2)) % 30)/10.0 ELSE '' END
+}]->(tr);
+
+// 7.10 Pessoa TRABALHA_EM Pesquisa (rt:14 com props numéricos)
+MATCH (p:Pessoa),(pe:Pesquisa)
+WHERE toInteger(right(p.idPessoa,2)) % 4 = toInteger(right(pe.idPesquisa,1)) % 4
+MERGE (p)-[:TRABALHA_EM {
+  dataInicio: pe.dataInicioPesquisa,
+  dataFim: pe.dataFimPesquisa,
+  funcao: p.cargoPessoa,
+  dedicacaoPercentual: 20 + (toInteger(right(p.idPessoa,2)) % 60),
+  dedicacaoHoraSemana: 8.0 + (toInteger(right(p.idPessoa,2)) % 24)
+}]->(pe);
+
+// 7.11 Pessoa POSSUI_PUBLICACAO (rt:15) e Publicacao->Sumario já criado
+MATCH (p:Pessoa),(pb:Publicacao)
+WHERE toInteger(right(p.idPessoa,2)) % 5 = toInteger(right(pb.idPublicacao,1)) % 5
+MERGE (p)-[:POSSUI_PUBLICACAO]->(pb);
+
+// 7.12 Pessoa PÓS/GRAD/CERT (rt:16,17,18 com props em 18)
+MATCH (p:Pessoa),(pg:PosGraduacao {idPosGraduacao:'POS-001'})
+WHERE toInteger(right(p.idPessoa,2)) % 4 = 0
+MERGE (p)-[:POSSUI_POS]->(pg);
+
+MATCH (p:Pessoa),(gr:Graduacao)
+WHERE toInteger(right(p.idPessoa,2)) % 6 = toInteger(right(gr.idGraduacao,1)) % 3
+MERGE (p)-[:POSSUI_GRADUACAO]->(gr);
+
+MATCH (p:Pessoa),(ce:Certificacao)
+WHERE toInteger(right(p.idPessoa,2)) % 7 = toInteger(right(ce.idCertificacao,1)) % 3
+MERGE (p)-[:POSSUI_CERTIFICACAO {
+  dataObtencao: date('2022-01-01') + duration({months:toInteger(right(p.idPessoa,2))}),
+  notaObtidaCertificacao: 6.0 + (toInteger(right(p.idPessoa,2)) % 40)/10.0,
+  dataExpiracao: date('2026-12-31')
+}]->(ce);
+
+// 7.13 Mentorias (Pessoa MENTOR_DE Pessoa) (rt:5)
+MATCH (mentor:Pessoa),(mentorado:Pessoa)
+WHERE toInteger(right(mentor.idPessoa,2)) % 10 = 0
+  AND toInteger(right(mentorado.idPessoa,2)) % 10 = 1
+  AND mentor.idPessoa <> mentorado.idPessoa
+MERGE (mentor)-[:MENTOR_DE {
+  dataInicio: date('2024-01-01'),
+  dataFim: '',
+  areasOrientacao: 'Carreira; Técnica'
+}]->(mentorado);
+
+// Fim
