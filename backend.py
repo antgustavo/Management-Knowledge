@@ -66,6 +66,7 @@ def CreateLLM(model, openai_api_key):
     gere uma query Cypher que use buscas parciais ou flexíveis:
     
     - Sempre normalize comparações de texto com `toLower()`.
+    - Entenda palavra militares como pessoas, não como cargo ou patente.
     - Entenda sinônimo de pessoas, por exemplo: 'Quais militares' ou 'Quais servidores/contribuidores' pode querer dizer 'Quais pessoas'.
     - Se possível, use `CONTAINS` ou `IN` para capturar sinônimos e variações.
     - Nunca use igualdade exata em strings de status ou categorias.

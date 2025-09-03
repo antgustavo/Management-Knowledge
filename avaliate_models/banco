@@ -66,7 +66,7 @@ MERGE (proj:Projeto {idProjeto:p.id})
     proj.dataInicioProjeto = p.ini,
     proj.dataFimProjeto = p.fim,
     proj.statusProjeto = p.status,
-    proj.orcamentoProjeto = p.orcamento;
+    proj.orcamentoProjeto = p.orc;
 
 // ====================================================================
 // 2) CONHECIMENTOS, COMPETÊNCIAS, TECNOLOGIAS (todos os atributos)
