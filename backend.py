@@ -65,7 +65,8 @@ def CreateLLM(model, openai_api_key):
     Se a pergunta contiver termos que não batem exatamente com os valores armazenados no grafo,
     gere uma query Cypher que use buscas parciais ou flexíveis:
     
-    - Sempre normalize comparações de texto com `toLower()`. 
+    - Sempre normalize comparações de texto com `toLower()`.
+    - Entenda sinônimo de pessoas, por exemplo: 'Quais militares' ou 'Quais servidores/contribuidores' pode querer dizer 'Quais pessoas'.
     - Se possível, use `CONTAINS` ou `IN` para capturar sinônimos e variações.
     - Nunca use igualdade exata em strings de status ou categorias.
     - Quando comparar datas, sempre converta strings para date()/datetime().
