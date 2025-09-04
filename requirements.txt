@@ -11,3 +11,7 @@ numpy
 scikit-learn
 nltk
 bcrypt
+pandas 
+bert_score 
+torch 
+torchvision
