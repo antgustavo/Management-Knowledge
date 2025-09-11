@@ -1,0 +1,131 @@
+Iniciando o pipeline de avaliação revisado...
+Processando questão 1/95: "Quais militares com patente de Major possuem a competência 'Gestão de Projetos'?"
+Processando questão 2/95: "Quais projetos utilizam a tecnologia PostgreSQL e estão em andamento?"
+Processando questão 3/95: "Quais militares com patente de Coronel são responsáveis por documentação?"
+Processando questão 4/95: "Quais projetos concluídos possuem documentação crítica de nível ALTA?"
+Processando questão 5/95: "Quais militares possuem certificação PMP?"
+Processando questão 6/95: "Quais treinamentos foram concluídos por militares de patente Capitão?"
+Processando questão 7/95: "Quais competências são requeridas pelo projeto 'Simulador de Voo IA'?"
+Processando questão 8/95: "Quais militares ativos são mentores de outros militares?"
+Processando questão 9/95: "Quais tecnologias são dominadas por militares com patente de 1º Tenente?"
+Processando questão 10/95: "Quais projetos requerem o conhecimento de Criptografia?"
+Processando questão 11/95: "Quais militares possuem publicações em conferências?"
+Processando questão 12/95: "Quais projetos utilizam simultaneamente Neo4j e OpenCV?"
+Processando questão 13/95: "Quais processos possuem documentação crítica?"
+Processando questão 14/95: "Quais pessoas possuem tanto pós-graduação quanto certificação?"
+Processando questão 15/95: "Quais projetos em andamento utilizam Python?"
+Processando questão 16/95: "Quais sumários estão vinculados a publicações?"
+Processando questão 17/95: "Quais militares afastados ainda possuem competências técnicas?"
+Processando questão 18/95: "Quais projetos planejam utilizar CUDA?"
+Processando questão 19/95: "Quais militares possuem graduação em na área de Aviação?"
+Processando questão 20/95: "Quais pesquisas estão vinculadas ao projeto 'Guerra Eletrônica Lite'?"
+Processando questão 21/95: "Quais militares concluíram o treinamento IA/ML Básico?"
+Processando questão 22/95: "Quais publicações foram feitas após 2023?"
+Processando questão 23/95: "Quais projetos concluídos utilizaram MATLAB?"
+Processando questão 24/95: "Quais militares com patente de 3º Sargento possuem competência de Programação?"
+Processando questão 25/95: "Quais militares atuaram como responsáveis por documentação publicada em 2024?"
+Processando questão 26/95: "Quais militares possuem certificação emitida pela Cisco?"
+Processando questão 27/95: "Quais projetos em andamento utilizam tanto Python quanto PostgreSQL?"
+Processando questão 28/95: "Quais militares possuem o conhecimento de Aviónica?"
+Processando questão 29/95: "Quais pesquisas estão relacionadas ao projeto 'Autopiloto Seguro'?"
+Processando questão 30/95: "Quais militares com patente de Tenente-Coronel são mentores?"
+Processando questão 31/95: "Quais documentos estão associados ao projeto Radar XBR-3?"
+Processando questão 32/95: "Quais tecnologias foram certificadas pela certificação Cisco CCNA?"
+Processando questão 33/95: "Quais militares concluíram o treinamento em Aviónica?"
+Processando questão 34/95: "Quais competências são críticas para o projeto C2 Unificado?"
+Processando questão 35/95: "Quais militares possuem publicações com palavras-chave 'ELINT'?"
+Processando questão 36/95: "Quais processos possuem documentação armazenada no Hangar H1?"
+Processando questão 37/95: "Quais projetos concluídos estão vinculados a pesquisas?"
+Processando questão 38/95: "Quais militares são cientistas de dados e dominam Neo4j?"
+Processando questão 39/95: "Quais competências possuem avaliação avançada em militares de patente Coronel?"
+Processando questão 40/95: "Quais projetos possuem orçamento acima de 3 milhões?"
+Processando questão 41/95: "Quais pessoas ativos possuem graduação em Engenharia Elétrica?"
+Processando questão 42/95: "Quais projetos utilizam a tecnologia CUDA e estão planejados?"
+Processando questão 43/95: "Quais publicações possuem DOI iniciando com '10.1000/abc5'?"
+Processando questão 44/95: "Quais militares possuem tanto conhecimento em Criptografia quanto em IA/ML?"
+Processando questão 45/95: "Quais treinamentos foram realizados no ITA?"
+Processando questão 46/95: "Quais documentos estão vinculados ao conhecimento de Manutenção Aeronáutica?"
+Processando questão 47/95: "Quais militares foram indicados para o treinamento Criptografia Aplicada?"
+Processando questão 48/95: "Quais militares de patente 2º Sargento possuem certificação CEH?"
+Processando questão 49/95: "Quais projetos concluídos estão relacionados ao conhecimento de Redes Táticas?"
+Processando questão 50/95: "Quais militares com patente de Capitão possuem competência de Segurança da Informação?"
+Processando questão 51/95: "Quais pesquisas estão ativas em 2025?"
+Processando questão 52/95: "Quais militares possuem pós-graduação em Gestão?"
+Processando questão 53/95: "Quais projetos utilizam tecnologias de banco de dados?"
+Processando questão 54/95: "Quais militares publicaram em 2025?"
+Processando questão 55/95: "Quais documentos estão vinculados ao processo Despacho de Voo?"
+Processando questão 56/95: "Quais militares ativos possuem certificações avançadas?"
+Processando questão 57/95: "Quais competências foram avaliadas como básicas em Sargentos?"
+Processando questão 58/95: "Quais militares foram responsáveis pela documentação Guia de Manutenção?"
+Processando questão 59/95: "Quais projetos concluídos utilizaram Python?"
+Processando questão 60/95: "Quais sumários estão associados a documentação Manual Radar XBR-3?"
+Processando questão 61/95: "Quais militares possuem certificação Ethical Hacking (CEH)?"
+Processando questão 62/95: "Quais projetos requerem simultaneamente conhecimentos de Aviónica e Guerra Eletrônica?"
+Processando questão 63/95: "Quais militares foram indicados para treinamentos de Segurança da Informação?"
+Processando questão 64/95: "Quais projetos utilizam o RTX Kernel?"
+Processando questão 65/95: "Quais publicações estão vinculadas a sumários?"
+Processando questão 66/95: "Quais militares de patente 1º Sargento possuem competência de Liderança?"
+Processando questão 67/95: "Quais pesquisas foram concluídas em 2023?"
+Processando questão 68/95: "Quais militares com patente de Coronel possuem certificação PMP?"
+Processando questão 69/95: "Quais projetos possuem documentação armazenada no Repositório A1?"
+Processando questão 70/95: "Quais militares dominam a tecnologia CUDA com nível igual ou superior a 4?"
+Processando questão 71/95: "Quais projetos em andamento possuem orçamento inferior a 2 milhões?"
+Processando questão 72/95: "Quais militares de patente Major publicaram artigos?"
+Processando questão 73/95: "Quais projetos requerem competência de Programação?"
+Processando questão 74/95: "Quais treinamentos foram realizados em modalidade EAD?"
+Processando questão 75/95: "Quais militares concluíram a graduação no ITA?"
+Processando questão 76/95: "Quais projetos utilizam a tecnologia OpenCV?"
+Processando questão 77/95: "Quais militares ativos possuem conhecimento em IA/ML?"
+Processando questão 78/95: "Quais documentos foram atualizados após 2023?"
+Processando questão 79/95: "Quais militares de patente 2º Tenente concluíram treinamentos?"
+Processando questão 80/95: "Quais competências são do tipo Gerencial?"
+Processando questão 81/95: "Quais militares atuam em pesquisas vinculadas ao projeto SatCom Defesa?"
+Processando questão 82/95: "Quais projetos utilizam Kafka?"
+Processando questão 83/95: "Quais militares possuem tanto certificação Cisco CCNA quanto competência de Programação?"
+Processando questão 84/95: "Quais projetos concluídos possuem pesquisas vinculadas a C2?"
+Processando questão 85/95: "Quais militares de patente 3º Sargento são instrutores?"
+Processando questão 86/95: "Quais tecnologias são consideradas Core nos projetos?"
+Processando questão 87/95: "Quais militares foram mentores desde 2024?"
+Processando questão 88/95: "Quais projetos estão em andamento e utilizam MATLAB?"
+Processando questão 89/95: "Quais militares possuem graduação em Engenharia Aeronáutica?"
+Processando questão 90/95: "Quais documentos foram publicados em 2022?"
+Processando questão 91/95: "Quais militares possuem nível avançado em Análise de Sinais?"
+Processando questão 92/95: "Quais projetos estão planejados para 2025?"
+Processando questão 93/95: "Quais militares são responsáveis por documentação no Repositório A1?"
+Processando questão 94/95: "Quais militares foram indicados para mais de um treinamento?"
+Processando questão 95/95: "Quais certificações possuem emissão até 2025?"
+
+Resultados detalhados salvos em: ../data/evaluation_results_revised-4.csv
+
+--- RESUMO DA AVALIAÇÃO REVISADA ---
+Taxa de Execução das Queries Cypher: 95.79%
+BERTScore F1 Médio (Similaridade Semântica): 0.7454
+
+Distribuição da Consistência Factual:
+factual_consistency
+CONSISTENTE                 49.473684
+INCONSISTENTE               42.105263
+PARCIALMENTE CONSISTENTE     8.421053
+-------------------------------------
+
+Amostra de Respostas marcadas como INCONSISTENTES:
+    id                                           question  \
+4    5          Quais militares possuem certificação PMP?   
+7    8  Quais militares ativos são mentores de outros ...   
+10  11  Quais militares possuem publicações em conferê...   
+12  13      Quais processos possuem documentação crítica?   
+15  16     Quais sumários estão vinculados a publicações?   
+
+                                          gold_answer  \
+4   Os militares que possuem a certificação PMP sã...   
+7   Militares ativos que são mentores de outros mi...   
+10  Os Militares Militar 12, Militar 17, Militar 2...   
+12  O processo Abastecimento de Aeronaves possui d...   
+15  O Resumo Radar está vinculado à publicação ELI...   
+
+                                     generated_answer  
+4   Não encontrei informações sobre isso no banco ...  
+7   Não encontrei informações sobre isso no banco ...  
+10  Não encontrei informações sobre isso no banco ...  
+12  Não encontrei informações sobre isso no banco ...  
+15  Os sumários vinculados a publicações são o 'Re...  

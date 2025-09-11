@@ -9,6 +9,8 @@ neo4j
 python-dotenv
 numpy
 ipynb
+jupyter
+ipywidgets
 scikit-learn
 nltk
 bcrypt
@@ -16,3 +18,8 @@ pandas
 bert_score 
 torch 
 torchvision
+langchain-huggingface 
+transformers 
+accelerate 
+bitsandbytes 
+sentencepiece
