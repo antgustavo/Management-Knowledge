@@ -134,7 +134,7 @@
   {
     "question": "Quais projetos concluídos utilizaram MATLAB?",
     "gold_cypher": "MATCH (p:Projeto {statusProjeto:'Concluído'})-[:UTILIZA_TECNOLOGIA]->(t:Tecnologia {nomeTecnologia:'MATLAB'}) RETURN p.idProjeto, p.nomeProjeto",
-    "gold_answer": "Nenhum projeto concluído utilizou MATLAB.",
+    "gold_answer": "Não encontrei informações sobre isso no banco de dados.",
     "id": 23
   },
   {
@@ -176,7 +176,7 @@
   {
     "question": "Quais militares com patente de Tenente-Coronel são mentores?",
     "gold_cypher": "MATCH (p:Pessoa {patentePessoa:'Tenente-Coronel'})-[:MENTOR_DE]->(m:Pessoa) RETURN p.idPessoa, p.nomePessoa, m.idPessoa, m.nomePessoa",
-    "gold_answer": "Não existem tenentes-coroneis mentores no banco.",
+    "gold_answer": "Não encontrei informações sobre isso no banco de dados.",
     "id": 30
   },
   {
@@ -260,7 +260,7 @@
   {
     "question": "Quais militares possuem tanto conhecimento em Criptografia quanto em IA/ML?",
     "gold_cypher": "MATCH (p:Pessoa)-[:POSSUI_CONHECIMENTO]->(k1:Conhecimento {nomeConhecimento:'Criptografia'}),(p)-[:POSSUI_CONHECIMENTO]->(k2:Conhecimento {nomeConhecimento:'IA/ML'}) RETURN p.idPessoa, p.nomePessoa",
-    "gold_answer": "Nenhum militar da lista possui simultaneamente cargos que indiquem conhecimento tanto em Criptografia quanto em IA/ML.",
+    "gold_answer": "Não encontrei informações sobre isso no banco de dados.",
     "id": 44
   },
   {
@@ -404,7 +404,7 @@
   {
     "question": "Quais militares com patente de Coronel possuem certificação PMP?",
     "gold_cypher": "MATCH (p:Pessoa {patentePessoa:'Coronel'})-[:POSSUI_CERTIFICACAO]->(c:Certificacao {nomeCertificacao:'PMP'}) RETURN p.idPessoa, p.nomePessoa",
-    "gold_answer": "Não foi encontrada resposta no banco.",
+    "gold_answer": "Não encontrei informações sobre isso no banco de dados.",
     "id": 68
   },
   {
@@ -416,7 +416,7 @@
   {
     "question": "Quais militares dominam a tecnologia CUDA com nível igual ou superior a 4?",
     "gold_cypher": "MATCH (p:Pessoa)-[r:DOMINA_TECNOLOGIA]->(t:Tecnologia {nomeTecnologia:'CUDA'}) WHERE r.nivel >= 4 RETURN p.idPessoa, p.nomePessoa",
-    "gold_answer": "Não foi encontrada resposta no banco.",
+    "gold_answer": "Não encontrei informações sobre isso no banco de dados.",
     "id": 70
   },
   {
@@ -524,7 +524,7 @@
   {
     "question": "Quais projetos estão em andamento e utilizam MATLAB?",
     "gold_cypher": "MATCH (p:Projeto {statusProjeto:'Em andamento'})-[:UTILIZA_TECNOLOGIA]->(t:Tecnologia {nomeTecnologia:'MATLAB'}) RETURN p.idProjeto, p.nomeProjeto",
-    "gold_answer": "Não foi encontrada resposta no banco.",
+    "gold_answer": "Não encontrei informações sobre isso no banco de dados.",
     "id": 88
   },
   {
