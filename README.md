@@ -205,3 +205,5 @@ O **Management Knowledge** é um sistema modular, seguro e simples de expandir.
 Ele serve como base para qualquer aplicação que envolva **gestão de usuários, autenticação e visualização de dados** por meio de **interfaces web leves e interativas**.
 
 ---
+
+(Este README.md foi feito com auxílio de IA)
