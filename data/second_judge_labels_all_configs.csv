@@ -1,0 +1,96 @@
+id,question,query_class,judge_gpt4,judge_hf27b,judge_hybrid
+1,Quais Pessoas com patente de Major possuem a competência 'Gestão de Projetos'?,single-hop,CONSISTENTE,INCONSISTENTE,CONSISTENTE
+2,Quais projetos utilizam a tecnologia PostgreSQL e estão em andamento?,single-hop,CONSISTENTE,INCONSISTENTE,CONSISTENTE
+3,Quais Pessoas com patente de Coronel são responsáveis por documentação?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+4,Quais projetos concluídos possuem documentação crítica de nível ALTA?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+5,Quais Pessoas possuem certificação PMP?,single-hop,CONSISTENTE,INCONSISTENTE,INCONSISTENTE
+6,Quais treinamentos foram concluídos por Pessoas de patente Capitão?,single-hop,CONSISTENTE,INCONSISTENTE,CONSISTENTE
+7,Quais competências são requeridas pelo projeto 'Simulador de Voo IA'?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+8,Quais Pessoas ativos são mentores de outras Pessoas?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+9,Quais tecnologias são dominadas por Pessoas com patente de 1º Tenente?,single-hop,PARCIALMENTE CONSISTENTE,PARCIALMENTE CONSISTENTE,PARCIALMENTE CONSISTENTE
+10,Quais projetos requerem o conhecimento de Criptografia?,single-hop,CONSISTENTE,PARCIALMENTE CONSISTENTE,PARCIALMENTE CONSISTENTE
+11,Quais Pessoas possuem publicações em conferências?,single-hop,INCONSISTENTE,INCONSISTENTE,INCONSISTENTE
+12,Quais projetos utilizam simultaneamente Neo4j e OpenCV?,multi-pattern,CONSISTENTE,CONSISTENTE,CONSISTENTE
+13,Quais processos possuem documentação crítica?,single-hop,INCONSISTENTE,INCONSISTENTE,INCONSISTENTE
+14,Quais pessoas possuem tanto pós-graduação quanto certificação?,multi-pattern,CONSISTENTE,CONSISTENTE,CONSISTENTE
+15,Quais projetos em andamento utilizam Python?,single-hop,CONSISTENTE,INCONSISTENTE,INCONSISTENTE
+16,Quais sumários estão vinculados a publicações?,single-hop,CONSISTENTE,CONSISTENTE,PARCIALMENTE CONSISTENTE
+17,Quais Pessoas afastados ainda possuem competências técnicas?,single-hop,CONSISTENTE,CONSISTENTE,PARCIALMENTE CONSISTENTE
+18,Quais projetos planejam utilizar CUDA?,single-hop,PARCIALMENTE CONSISTENTE,INCONSISTENTE,INCONSISTENTE
+19,Quais Pessoas possuem graduação em na área de Aviação?,single-hop,CONSISTENTE,INCONSISTENTE,PARCIALMENTE CONSISTENTE
+20,Quais pesquisas estão vinculadas ao projeto 'Guerra Eletrônica Lite'?,property-lookup,INCONSISTENTE,INCONSISTENTE,INCONSISTENTE
+21,Quais Pessoas concluíram o treinamento IA/ML Básico?,single-hop,CONSISTENTE,INCONSISTENTE,INCONSISTENTE
+22,Quais publicações foram feitas após 2023?,property-lookup,CONSISTENTE,CONSISTENTE,CONSISTENTE
+23,Quais projetos concluídos utilizaram MATLAB?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+24,Quais Pessoas com patente de 3º Sargento possuem competência de Programação?,single-hop,CONSISTENTE,INCONSISTENTE,INCONSISTENTE
+25,Quais Pessoas atuaram como responsáveis por documentação publicada em 2024?,single-hop,PARCIALMENTE CONSISTENTE,INCONSISTENTE,PARCIALMENTE CONSISTENTE
+26,Quais Pessoas possuem certificação emitida pela Cisco?,single-hop,CONSISTENTE,INCONSISTENTE,INCONSISTENTE
+27,Quais projetos em andamento utilizam tanto Python quanto PostgreSQL?,multi-pattern,CONSISTENTE,CONSISTENTE,CONSISTENTE
+28,Quais Pessoas possuem o conhecimento de Aviónica?,single-hop,CONSISTENTE,PARCIALMENTE CONSISTENTE,PARCIALMENTE CONSISTENTE
+29,Quais pesquisas estão relacionadas ao projeto 'Autopiloto Seguro'?,property-lookup,INCONSISTENTE,INCONSISTENTE,CONSISTENTE
+30,Quais Pessoas com patente de Tenente-Coronel são mentores?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+31,Quais documentos estão associados ao projeto Radar XBR-3?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+32,Quais tecnologias foram certificadas pela certificação Cisco CCNA?,single-hop,CONSISTENTE,CONSISTENTE,INCONSISTENTE
+33,Quais Pessoas concluíram o treinamento em Aviónica?,single-hop,CONSISTENTE,INCONSISTENTE,INCONSISTENTE
+34,Quais competências são críticas para o projeto C2 Unificado?,single-hop,INCONSISTENTE,INCONSISTENTE,INCONSISTENTE
+35,Quais Pessoas possuem publicações com palavras-chave 'ELINT'?,single-hop,CONSISTENTE,INCONSISTENTE,CONSISTENTE
+36,Quais processos possuem documentação armazenada no Hangar H1?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+37,Quais projetos concluídos estão vinculados a pesquisas?,property-lookup,INCONSISTENTE,INCONSISTENTE,INCONSISTENTE
+38,Quais Pessoas são cientistas de dados e dominam Neo4j?,single-hop,INCONSISTENTE,INCONSISTENTE,INCONSISTENTE
+39,Quais competências possuem avaliação avançada em Pessoas de patente Coronel?,single-hop,INCONSISTENTE,INCONSISTENTE,INCONSISTENTE
+40,Quais projetos possuem orçamento acima de 3 milhões?,property-lookup,CONSISTENTE,CONSISTENTE,CONSISTENTE
+41,Quais pessoas ativos possuem graduação em Engenharia Elétrica?,single-hop,CONSISTENTE,INCONSISTENTE,INCONSISTENTE
+42,Quais projetos utilizam a tecnologia CUDA e estão planejados?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+43,Quais publicações possuem DOI iniciando com '10.1000/abc5'?,property-lookup,INCONSISTENTE,CONSISTENTE,CONSISTENTE
+44,Quais Pessoas possuem tanto conhecimento em Criptografia quanto em IA/ML?,multi-pattern,INCONSISTENTE,CONSISTENTE,CONSISTENTE
+45,Quais treinamentos foram realizados no ITA?,property-lookup,CONSISTENTE,CONSISTENTE,CONSISTENTE
+46,Quais documentos estão vinculados ao conhecimento de Manutenção Aeronáutica?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+47,Quais Pessoas foram indicados para o treinamento Criptografia Aplicada?,single-hop,CONSISTENTE,PARCIALMENTE CONSISTENTE,CONSISTENTE
+48,Quais Pessoas de patente 2º Sargento possuem certificação CEH?,single-hop,CONSISTENTE,INCONSISTENTE,CONSISTENTE
+49,Quais projetos concluídos estão relacionados ao conhecimento de Redes Táticas?,single-hop,INCONSISTENTE,CONSISTENTE,CONSISTENTE
+50,Quais Pessoas com patente de Capitão possuem competência de Segurança da Informação?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+51,Quais pesquisas estão ativas em 2025?,property-lookup,PARCIALMENTE CONSISTENTE,PARCIALMENTE CONSISTENTE,CONSISTENTE
+52,Quais Pessoas possuem pós-graduação em Gestão?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+53,Quais projetos utilizam tecnologias de banco de dados?,single-hop,CONSISTENTE,INCONSISTENTE,INCONSISTENTE
+54,Quais Pessoas publicaram em 2025?,single-hop,CONSISTENTE,INCONSISTENTE,INCONSISTENTE
+55,Quais documentos estão vinculados ao processo Despacho de Voo?,single-hop,CONSISTENTE,INCONSISTENTE,CONSISTENTE
+56,Quais Pessoas ativos possuem certificações avançadas?,property-lookup,ERRO_EXECUCAO,INCONSISTENTE,INCONSISTENTE
+57,Quais competências foram avaliadas como básicas em Sargentos?,single-hop,INCONSISTENTE,INCONSISTENTE,INCONSISTENTE
+58,Quais Pessoas foram responsáveis pela documentação Guia de Manutenção?,single-hop,CONSISTENTE,INCONSISTENTE,CONSISTENTE
+59,Quais projetos concluídos utilizaram Python?,single-hop,INCONSISTENTE,CONSISTENTE,CONSISTENTE
+60,Quais sumários estão associados a documentação Manual Radar XBR-3?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+61,Quais Pessoas possuem certificação Ethical Hacking (CEH)?,single-hop,CONSISTENTE,INCONSISTENTE,INCONSISTENTE
+62,Quais projetos requerem simultaneamente conhecimentos de Aviónica e Guerra Eletrônica?,multi-pattern,CONSISTENTE,CONSISTENTE,CONSISTENTE
+63,Quais Pessoas foram indicados para treinamentos de Segurança da Informação?,single-hop,INCONSISTENTE,INCONSISTENTE,INCONSISTENTE
+64,Quais projetos utilizam o RTX Kernel?,single-hop,CONSISTENTE,INCONSISTENTE,CONSISTENTE
+65,Quais publicações estão vinculadas a sumários?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+66,Quais Pessoas de patente 1º Sargento possuem competência de Liderança?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+67,Quais pesquisas foram concluídas em 2023?,property-lookup,CONSISTENTE,CONSISTENTE,CONSISTENTE
+68,Quais Pessoas com patente de Coronel possuem certificação PMP?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+69,Quais projetos possuem documentação armazenada no Repositório A1?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+70,Quais Pessoas dominam a tecnologia CUDA com nível igual ou superior a 4?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+71,Quais projetos em andamento possuem orçamento inferior a 2 milhões?,property-lookup,CONSISTENTE,CONSISTENTE,CONSISTENTE
+72,Quais Pessoas de patente Major publicaram artigos?,single-hop,PARCIALMENTE CONSISTENTE,CONSISTENTE,PARCIALMENTE CONSISTENTE
+73,Quais projetos requerem competência de Programação?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+74,Quais treinamentos foram realizados em modalidade EAD?,property-lookup,CONSISTENTE,CONSISTENTE,CONSISTENTE
+75,Quais Pessoas concluíram a graduação no ITA?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+76,Quais projetos utilizam a tecnologia OpenCV?,single-hop,CONSISTENTE,INCONSISTENTE,INCONSISTENTE
+77,Quais Pessoas ativos possuem conhecimento em IA/ML?,single-hop,PARCIALMENTE CONSISTENTE,PARCIALMENTE CONSISTENTE,CONSISTENTE
+78,Quais documentos foram atualizados após 2023?,property-lookup,CONSISTENTE,CONSISTENTE,PARCIALMENTE CONSISTENTE
+79,Quais Pessoas de patente 2º Tenente concluíram treinamentos?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+80,Quais competências são do tipo Gerencial?,property-lookup,ERRO_EXECUCAO,CONSISTENTE,CONSISTENTE
+81,Quais Pessoas atuam em pesquisas vinculadas ao projeto SatCom Defesa?,single-hop,INCONSISTENTE,INCONSISTENTE,INCONSISTENTE
+82,Quais projetos utilizam Kafka?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+83,Quais Pessoas possuem tanto certificação Cisco CCNA quanto competência de Programação?,multi-pattern,CONSISTENTE,INCONSISTENTE,CONSISTENTE
+84,Quais projetos concluídos possuem pesquisas vinculadas a C2?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+85,Quais Pessoas de patente 3º Sargento são instrutores?,property-lookup,INCONSISTENTE,INCONSISTENTE,INCONSISTENTE
+86,Quais tecnologias são consideradas Core nos projetos?,single-hop,INCONSISTENTE,CONSISTENTE,CONSISTENTE
+87,Quais Pessoas foram mentores desde 2024?,single-hop,CONSISTENTE,INCONSISTENTE,INCONSISTENTE
+88,Quais projetos estão em andamento e utilizam MATLAB?,single-hop,CONSISTENTE,CONSISTENTE,CONSISTENTE
+89,Quais Pessoas possuem graduação em Engenharia Aeronáutica?,single-hop,INCONSISTENTE,INCONSISTENTE,INCONSISTENTE
+90,Quais documentos foram publicados em 2022?,property-lookup,CONSISTENTE,CONSISTENTE,CONSISTENTE
+91,Quais Pessoas possuem nível avançado em Análise de Sinais?,single-hop,INCONSISTENTE,INCONSISTENTE,INCONSISTENTE
+92,Quais projetos estão planejados para 2025?,property-lookup,CONSISTENTE,INCONSISTENTE,INCONSISTENTE
+93,Quais Pessoas são responsáveis por documentação no Repositório A1?,single-hop,INCONSISTENTE,INCONSISTENTE,INCONSISTENTE
+94,Quais Pessoas foram indicados para mais de um treinamento?,aggregation,CONSISTENTE,INCONSISTENTE,CONSISTENTE
+95,Quais certificações possuem emissão até 2025?,property-lookup,CONSISTENTE,CONSISTENTE,CONSISTENTE

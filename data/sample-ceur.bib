@@ -1,0 +1,739 @@
+
+% Journals
+
+% First the Full Name is given, then the abbreviation used in the AMS Math
+% Reviews, with an indication if it could not be found there.
+% Note the 2nd overwrites the 1st, so swap them if you want the full name.
+
+ %{AMS}
+ @String{AMSTrans = "American Mathematical Society Translations" }
+ @String{AMSTrans = "Amer. Math. Soc. Transl." }
+ @String{BullAMS = "Bulletin of the American Mathematical Society" }
+ @String{BullAMS = "Bull. Amer. Math. Soc." }
+ @String{ProcAMS = "Proceedings of the American Mathematical Society" }
+ @String{ProcAMS = "Proc. Amer. Math. Soc." }
+ @String{TransAMS = "Transactions of the American Mathematical Society" }
+ @String{TransAMS = "Trans. Amer. Math. Soc." }
+
+ %ACM
+ @String{CACM = "Communications of the {ACM}" }
+ @String{CACM = "Commun. {ACM}" }
+ @String{CompServ = "Comput. Surveys" }
+ @String{JACM = "J. ACM" }
+ @String{ACMMathSoft = "{ACM} Transactions on Mathematical Software" }
+ @String{ACMMathSoft = "{ACM} Trans. Math. Software" }
+ @String{SIGNUM = "{ACM} {SIGNUM} Newsletter" }
+ @String{SIGNUM = "{ACM} {SIGNUM} Newslett." }
+
+ @String{AmerSocio = "American Journal of Sociology" }
+ @String{AmerStatAssoc = "Journal of the American Statistical Association" }
+ @String{AmerStatAssoc = "J. Amer. Statist. Assoc." }
+ @String{ApplMathComp = "Applied Mathematics and Computation" }
+ @String{ApplMathComp = "Appl. Math. Comput." }
+ @String{AmerMathMonthly = "American Mathematical Monthly" }
+ @String{AmerMathMonthly = "Amer. Math. Monthly" }
+ @String{BIT = "{BIT}" }
+ @String{BritStatPsych = "British Journal of Mathematical and Statistical
+          Psychology" }
+ @String{BritStatPsych = "Brit. J. Math. Statist. Psych." }
+ @String{CanMathBull = "Canadian Mathematical Bulletin" }
+ @String{CanMathBull = "Canad. Math. Bull." }
+ @String{CompApplMath = "Journal of Computational and Applied Mathematics" }
+ @String{CompApplMath = "J. Comput. Appl. Math." }
+ @String{CompPhys = "Journal of Computational Physics" }
+ @String{CompPhys = "J. Comput. Phys." }
+ @String{CompStruct = "Computers and Structures" }
+ @String{CompStruct = "Comput. \& Structures" }
+ @String{CompJour = "The Computer Journal" }
+ @String{CompJour = "Comput. J." }
+ @String{CompSysSci = "Journal of Computer and System Sciences" }
+ @String{CompSysSci = "J. Comput. System Sci." }
+ @String{Computing = "Computing" }
+ @String{ContempMath = "Contemporary Mathematics" }
+ @String{ContempMath = "Contemp. Math." }
+ @String{Crelle = "Crelle's Journal" }
+ @String{GiornaleMath = "Giornale di Mathematiche" }
+ @String{GiornaleMath = "Giorn. Mat." } % didn't find in AMS MR., ibid.
+
+ %IEEE
+ @String{Computer = "{IEEE} Computer" }
+ @String{IEEETransComp = "{IEEE} Transactions on Computers" }
+ @String{IEEETransComp = "{IEEE} Trans. Comput." }
+ @String{IEEETransAC = "{IEEE} Transactions on Automatic Control" }
+ @String{IEEETransAC = "{IEEE} Trans. Automat. Control" }
+ @String{IEEESpec = "{IEEE} Spectrum" } % didn't find in AMS MR
+ @String{ProcIEEE = "Proceedings of the {IEEE}" }
+ @String{ProcIEEE = "Proc. {IEEE}" } % didn't find in AMS MR
+ @String{IEEETransAeroElec = "{IEEE} Transactions on Aerospace and Electronic
+     Systems" }
+ @String{IEEETransAeroElec = "{IEEE} Trans. Aerospace Electron. Systems" }
+
+ @String{IMANumerAna = "{IMA} Journal of Numerical Analysis" }
+ @String{IMANumerAna = "{IMA} J. Numer. Anal." }
+ @String{InfProcLet = "Information Processing Letters" }
+ @String{InfProcLet = "Inform. Process. Lett." }
+ @String{InstMathApp = "Journal of the Institute of Mathematics and
+     its Applications" }
+ @String{InstMathApp = "J. Inst. Math. Appl." }
+ @String{IntControl = "International Journal of Control" }
+ @String{IntControl = "Internat. J. Control" }
+ @String{IntNumerEng = "International Journal for Numerical Methods in
+     Engineering" }
+ @String{IntNumerEng = "Internat. J. Numer. Methods Engrg." }
+ @String{IntSuper = "International Journal of Supercomputing Applications" }
+ @String{IntSuper = "Internat. J. Supercomputing Applic." } % didn't find
+%% in AMS MR
+ @String{Kibernetika = "Kibernetika" }
+ @String{JResNatBurStand = "Journal of Research of the National Bureau
+     of Standards" }
+ @String{JResNatBurStand = "J. Res. Nat. Bur. Standards" }
+ @String{LinAlgApp = "Linear Algebra and its Applications" }
+ @String{LinAlgApp = "Linear Algebra Appl." }
+ @String{MathAnaAppl = "Journal of Mathematical Analysis and Applications" }
+ @String{MathAnaAppl = "J. Math. Anal. Appl." }
+ @String{MathAnnalen = "Mathematische Annalen" }
+ @String{MathAnnalen = "Math. Ann." }
+ @String{MathPhys = "Journal of Mathematical Physics" }
+ @String{MathPhys = "J. Math. Phys." }
+ @String{MathComp = "Mathematics of Computation" }
+ @String{MathComp = "Math. Comp." }
+ @String{MathScand = "Mathematica Scandinavica" }
+ @String{MathScand = "Math. Scand." }
+ @String{TablesAidsComp = "Mathematical Tables and Other Aids to Computation" }
+ @String{TablesAidsComp = "Math. Tables Aids Comput." }
+ @String{NumerMath = "Numerische Mathematik" }
+ @String{NumerMath = "Numer. Math." }
+ @String{PacificMath = "Pacific Journal of Mathematics" }
+ @String{PacificMath = "Pacific J. Math." }
+ @String{ParDistComp = "Journal of Parallel and Distributed Computing" }
+ @String{ParDistComp = "J. Parallel and Distrib. Comput." } % didn't find
+%% in AMS MR
+ @String{ParComputing = "Parallel Computing" }
+ @String{ParComputing = "Parallel Comput." }
+ @String{PhilMag = "Philosophical Magazine" }
+ @String{PhilMag = "Philos. Mag." }
+ @String{ProcNAS = "Proceedings of the National Academy of Sciences
+                    of the USA" }
+ @String{ProcNAS = "Proc. Nat. Acad. Sci. U. S. A." }
+ @String{Psychometrika = "Psychometrika" }
+ @String{QuartMath = "Quarterly Journal of Mathematics, Oxford, Series (2)" }
+ @String{QuartMath = "Quart. J. Math. Oxford Ser. (2)" }
+ @String{QuartApplMath = "Quarterly of Applied Mathematics" }
+ @String{QuartApplMath = "Quart. Appl. Math." }
+ @String{RevueInstStat = "Review of the International Statisical Institute" }
+ @String{RevueInstStat = "Rev. Inst. Internat. Statist." }
+
+ %SIAM
+ @String{JSIAM = "Journal of the Society for Industrial and Applied
+     Mathematics" }
+ @String{JSIAM = "J. Soc. Indust. Appl. Math." }
+ @String{JSIAMB = "Journal of the Society for Industrial and Applied
+     Mathematics, Series B, Numerical Analysis" }
+ @String{JSIAMB = "J. Soc. Indust. Appl. Math. Ser. B Numer. Anal." }
+ @String{SIAMAlgMeth = "{SIAM} Journal on Algebraic and Discrete Methods" }
+ @String{SIAMAlgMeth = "{SIAM} J. Algebraic Discrete Methods" }
+ @String{SIAMAppMath = "{SIAM} Journal on Applied Mathematics" }
+ @String{SIAMAppMath = "{SIAM} J. Appl. Math." }
+ @String{SIAMComp = "{SIAM} Journal on Computing" }
+ @String{SIAMComp = "{SIAM} J. Comput." }
+ @String{SIAMMatrix = "{SIAM} Journal on Matrix Analysis and Applications" }
+ @String{SIAMMatrix = "{SIAM} J. Matrix Anal. Appl." }
+ @String{SIAMNumAnal = "{SIAM} Journal on Numerical Analysis" }
+ @String{SIAMNumAnal = "{SIAM} J. Numer. Anal." }
+ @String{SIAMReview = "{SIAM} Review" }
+ @String{SIAMReview = "{SIAM} Rev." }
+ @String{SIAMSciStat = "{SIAM} Journal on Scientific and Statistical
+     Computing" }
+ @String{SIAMSciStat = "{SIAM} J. Sci. Statist. Comput." }
+
+ @String{SoftPracExp = "Software Practice and Experience" }
+ @String{SoftPracExp = "Software Prac. Experience" } % didn't find in AMS MR
+ @String{StatScience = "Statistical Science" }
+ @String{StatScience = "Statist. Sci." }
+ @String{Techno = "Technometrics" }
+ @String{USSRCompMathPhys = "{USSR} Computational Mathematics and Mathematical
+     Physics" }
+ @String{USSRCompMathPhys = "{U. S. S. R.} Comput. Math. and Math. Phys." }
+ @String{VLSICompSys = "Journal of {VLSI} and Computer Systems" }
+ @String{VLSICompSys = "J. {VLSI} Comput. Syst." }
+ @String{ZAngewMathMech = "Zeitschrift fur Angewandte Mathematik und
+     Mechanik" }
+ @String{ZAngewMathMech = "Z. Angew. Math. Mech." }
+ @String{ZAngewMathPhys = "Zeitschrift fur Angewandte Mathematik und Physik" }
+ @String{ZAngewMathPhys = "Z. Angew. Math. Phys." }
+
+% Publishers % ================================================= |
+
+ @String{Academic = "Academic Press" }
+ @String{ACMPress = "{ACM} Press" }
+ @String{AdamHilger = "Adam Hilger" }
+ @String{AddisonWesley = "Addison-Wesley" }
+ @String{AllynBacon = "Allyn and Bacon" }
+ @String{AMS = "American Mathematical Society" }
+ @String{Birkhauser = "Birkha{\"u}ser" }
+ @String{CambridgePress = "Cambridge University Press" }
+ @String{Chelsea = "Chelsea" }
+ @String{ClaredonPress = "Claredon Press" }
+ @String{DoverPub = "Dover Publications" }
+ @String{Eyolles = "Eyolles" }
+ @String{HoltRinehartWinston = "Holt, Rinehart and Winston" }
+ @String{Interscience = "Interscience" }
+ @String{JohnsHopkinsPress = "The Johns Hopkins University Press" }
+ @String{JohnWileySons = "John Wiley and Sons" }
+ @String{Macmillan = "Macmillan" }
+ @String{MathWorks = "The Math Works Inc." }
+ @String{McGrawHill = "McGraw-Hill" }
+ @String{NatBurStd = "National Bureau of Standards" }
+ @String{NorthHolland = "North-Holland" }
+ @String{OxfordPress = "Oxford University Press" }  %address Oxford or London?
+ @String{PergamonPress = "Pergamon Press" }
+ @String{PlenumPress = "Plenum Press" }
+ @String{PrenticeHall = "Prentice-Hall" }
+ @String{SIAMPub = "{SIAM} Publications" }
+ @String{Springer = "Springer-Verlag" }
+ @String{TexasPress = "University of Texas Press" }
+ @String{VanNostrand = "Van Nostrand" }
+ @String{WHFreeman = "W. H. Freeman and Co." }
+
+%Entries
+
+
+%Keep references standardized, as when you download from different databases they may slightly differ.
+Also, organize them by category (e.g., articles, tech reports) and alphabetically by publication identifier.
+Possible categories:
+article; book; booklet; inbook; incollection; inproceedings; journalpart; manual; misc; patent; thesis; phdthesis; mastersthesis; monography; proceedings; unpublished.
+
+%|--article---|
+
+@article{UnifyingLLMandKG,
+ author={Pan, Shirui and Luo, Linhao and Wang, Yufei and Chen, Chen and Wang, Jiapu and Wu, Xindong},
+  journal={IEEE Transactions on Knowledge and Data Engineering}, 
+  title={Unifying Large Language Models and Knowledge Graphs: A Roadmap}, 
+  year={2024},
+  volume={36},
+  number={7},
+  pages={3580-3599},
+  keywords={Task analysis;Decoding;Cognition;Training;Predictive models;Knowledge graphs;Chatbots;Natural language processing;large language models;generative pre-training;knowledge graphs;roadmap;bidirectional reasoning},
+  doi={10.1109/TKDE.2024.3352100}
+}
+
+@article{GRUBER1993199,
+title = {A translation approach to portable ontology specifications},
+journal = {Knowledge Acquisition},
+volume = {5},
+number = {2},
+pages = {199-220},
+year = {1993},
+issn = {1042-8143},
+doi = {https://doi.org/10.1006/knac.1993.1008},
+url = {https://www.sciencedirect.com/science/article/pii/S1042814383710083},
+author = {Thomas R. Gruber},
+}
+
+@ARTICLE{Klein,
+  author={Klein, G. and Moon, B. and Hoffman, R.R.},
+  journal={IEEE Intelligent Systems}, 
+  title={Making Sense of Sensemaking 1: Alternative Perspectives}, 
+  year={2006},
+  volume={21},
+  number={4},
+  pages={70-73},
+  keywords={Weather forecasting;Psychology;Humans;Cognitive science;Cognition;Predictive models;Atmospheric modeling;Information analysis;Moon;Intelligent systems;curiosity;comprehension;mental model;situation awareness;definitions of sensemaking},
+  doi={10.1109/MIS.2006.75}}
+
+@article{Traag2019,
+    author = {Traag, V.A and Waltman, L and van Eck, N.J},
+    title = {From Louvain to Leiden: guaranteeing well-connected communities},
+    journal = {Scientific Reports},
+    year = {2019},
+    volume = {9},
+    doi = {10.1038/s41598-019-41695-z}
+}
+
+%--book---
+
+@book{TeodorovicJanic2022,
+  title        = {Transportation Engineering: Theory, Practice, and Modeling},
+  edition      = {2nd},
+  author       = {Dusan Teodorovic and Milan Janić},
+  year         = {2022},
+  publisher    = {Butterworth-Heinemann},
+  language     = {English},
+  isbn         = {9780323908139},
+  eisbn        = {9780323910415},
+  doi          = {https://doi.org/10.1016/C2020-0-03714-X},
+  pages        = {1012},
+  address      = {Oxford, UK}
+}
+
+%--inproceedings---
+
+@inproceedings{KG-CF,
+author={Zheng, Zaiyi and Dong, Yushun and Wang, Song and Liu, Haochen and Wang, Qi and Li, Jundong},
+  booktitle={2024 IEEE International Conference on Big Data (BigData)}, 
+  title={KG-CF: Knowledge Graph Completion with Context Filtering under the Guidance of Large Language Models}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={805-810},
+  keywords={Codes;Accuracy;Large language models;Knowledge graphs;Predictive models;Big Data;Information filters;Data models;Cognition;Context modeling;knowledge graph;entity prediction;language models;inductive learning},
+  doi={10.1109/BigData62323.2024.10826107}
+}
+
+@inproceedings{nadgeri-etal-2021-kgpool,
+    title = "{KGP}ool: Dynamic Knowledge Graph Context Selection for Relation Extraction",
+    author = "Nadgeri, Abhishek  and
+      Bastos, Anson  and
+      Singh, Kuldeep  and
+      Mulang{'}, Isaiah Onando  and
+      Hoffart, Johannes  and
+      Shekarpour, Saeedeh  and
+      Saraswat, Vijay",
+    editor = "Zong, Chengqing  and
+      Xia, Fei  and
+      Li, Wenjie  and
+      Navigli, Roberto",
+    booktitle = "Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021",
+    month = "aug",
+    year = "2021",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.findings-acl.48/",
+    doi = "10.18653/v1/2021.findings-acl.48",
+    pages = "535--548"
+}
+
+@inproceedings{bert-score,
+  title={BERTScore: Evaluating Text Generation with BERT},
+  author={Tianyi Zhang* and Varsha Kishore* and Felix Wu* and Kilian Q. Weinberger and Yoav Artzi},
+  booktitle={International Conference on Learning Representations},
+  year={2020},
+  url={https://openreview.net/forum?id=SkeHuCVFDr}
+}
+
+@inproceedings{GRAFOCONHECIMENTO,
+    title = "{GRAFO DE CONHECIMENTO: UMA BREVE INTRODUÇÃO}",
+    author = "Samuel Cristhian Schwebel and Alexandre Leopoldo Gonçalves",
+    booktitle = "20th CONTECSI – INTERNATIONAL CONFERENCE ON INFORMATION SYSTEMS AND TECHNOLOGY MANAGEMENT",
+    month = "feb",
+    year = "2024",
+    url = "https://www.tecsi.org/contecsi/index.php/contecsi/20thCONTECSI/paper/viewPaper/7286",
+    doi = "10.5748/20CONTECSI/COM/DSC/7286",
+}
+
+%|--misc---|
+
+@misc{sehwag2024incontextlearningtopologicalinformation,
+      title={In-Context Learning with Topological Information for Knowledge Graph Completion}, 
+      author={Udari Madhushani Sehwag and Kassiani Papasotiriou and Jared Vann and Sumitra Ganesh},
+      year={2024},
+      eprint={2412.08742},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2412.08742}, 
+}
+
+
+@misc{edge2025localglobalgraphrag,
+      title={From Local to Global: A Graph RAG Approach to Query-Focused Summarization}, 
+      author={Darren Edge and Ha Trinh and Newman Cheng and Joshua Bradley and Alex Chao and Apurva Mody and Steven Truitt and Dasha Metropolitansky and Robert Osazuwa Ness and Jonathan Larson},
+      year={2025},
+      eprint={2404.16130},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2404.16130}, 
+}
+
+@inproceedings{huang2023reasoninglargelanguagemodels,
+    title     = "Towards Reasoning in Large Language Models: A Survey",
+    author    = "Huang, Jie and Chang, Kevin Chen-Chuan",
+    booktitle = "Findings of the Association for Computational Linguistics: ACL 2023",
+    month     = jul,
+    year      = "2023",
+    address   = "Toronto, Canada",
+    publisher = "Association for Computational Linguistics",
+    url       = "https://aclanthology.org/2023.findings-acl.67/",
+    doi       = "10.18653/v1/2023.findings-acl.67",
+    pages     = "1049--1065",
+}
+@inproceedings{mallen2023trustlanguagemodelsinvestigating,
+    title     = "When Not to Trust Language Models: Investigating Effectiveness of Parametric and Non-Parametric Memories",
+    author    = "Mallen, Alex and Asai, Akari and Zhong, Victor and Das, Rajarshi and Khashabi, Daniel and Hajishirzi, Hannaneh",
+    booktitle = "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month     = jul,
+    year      = "2023",
+    address   = "Toronto, Canada",
+    publisher = "Association for Computational Linguistics",
+    url       = "https://aclanthology.org/2023.acl-long.546/",
+    doi       = "10.18653/v1/2023.acl-long.546",
+    pages     = "9802--9822",
+}
+
+@misc{xu2024contextgraph,
+      title={Context Graph}, 
+      author={Chengjin Xu and Muzhi Li and Cehao Yang and Xuhui Jiang and Lumingyuan Tang and Yiyan Qi and Jian Guo},
+      year={2024},
+      eprint={2406.11160},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2406.11160}, 
+}
+
+@misc{mruthyunjaya2023rethinkinglanguagemodelssymbolic,
+      title={Rethinking Language Models as Symbolic Knowledge Graphs}, 
+      author={Vishwas Mruthyunjaya and Pouya Pezeshkpour and Estevam Hruschka and Nikita Bhutani},
+      year={2023},
+      eprint={2308.13676},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2308.13676}, 
+}
+
+@misc{liu2025largelanguagemodelsknowledge,
+      title={Large Language Models for Knowledge Graph Embedding: A Survey}, 
+      author={Bingchen Liu and Yuanyuan Fang and Naixing Xu and Shihao Hou and Xin Li and Qian Li},
+      year={2025},
+      eprint={2501.07766},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2501.07766}, 
+}
+
+@inproceedings{lewis2021retrievalaugmentedgenerationknowledgeintensivenlp,
+    title     = "Retrieval-Augmented Generation for Knowledge-Intensive {NLP} Tasks",
+    author    = "Lewis, Patrick and Perez, Ethan and Piktus, Aleksandra and Petroni, Fabio and Karpukhin, Vladimir and Goyal, Naman and K{\"u}ttler, Heinrich and Lewis, Mike and Yih, Wen-tau and Rockt{\"a}schel, Tim and Riedel, Sebastian and Kiela, Douwe",
+    booktitle = "Advances in Neural Information Processing Systems 33 (NeurIPS 2020)",
+    year      = "2020",
+    pages     = "9459--9474",
+    url       = "https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html",
+}
+
+@misc{gao2024retrievalaugmentedgenerationlargelanguage,
+      title={Retrieval-Augmented Generation for Large Language Models: A Survey}, 
+      author={Yunfan Gao and Yun Xiong and Xinyu Gao and Kangxiang Jia and Jinliu Pan and Yuxi Bi and Yi Dai and Jiawei Sun and Meng Wang and Haofen Wang},
+      year={2024},
+      eprint={2312.10997},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2312.10997}, 
+}
+
+@misc{GruberONTOLOGY,
+      title={Ontology},
+      booktitle = {Encyclopedia of Database Systems},
+      author={Tom Gruber},
+      year={2008},
+      url={https://tomgruber.org/writing/ontology-in-encyclopedia-of-dbs.pdf}, 
+}
+
+%site, página web
+@misc{valkyrieAi,
+  author       =  {Valkyrie AI},
+  title        =  {Building Accountable LLMs with Knowledge Graphs - Valkyrie AI},
+  year        =  {2024},
+  month      = {April},
+
+  url          =  {https://valkyrie.ai/post/building-accountable-llms-with-knowledge-graphs/}
+}
+
+@misc{grafoIMEUSP,
+  author       =  {Paulo Feofiloff},
+  title        =  {O que é um grafo?},
+  year        =  {2022},
+  month      = {may},
+
+  url          =  {https://www.ime.usp.br/\sim pf/algoritmos\_em\_grafos/aulas/grafos.html\#:\sim :text=Um\%20grafo\%20(\%3D\%20graph)\%20\%C3\%A9,segundo\%20\%C3\%A9\%20a\%20ponta\%20final\%20.}
+}
+
+@misc{grafoWikipedia,
+  author       =  {Community Wikipedia},
+  title        =  {Teoria dos grafos},
+  year        =  {2013},
+  month      = {aug},
+  url          =  {https://pt.wikipedia.org/wiki/Teoria\_dos\_grafos}
+}
+
+@misc{canaltechLLM,
+  author       =  {André Lourenti MAgalhães},
+  title        =  {O que é LLM? | Large Language Model},
+  year        =  {2023},
+  month      = {July},
+
+  url          =  {https://canaltech.com.br/inteligencia-artificial/o-que-e-llm-large-language-model/}
+}
+
+@misc{ibmLLM,
+  author       =  {IBM},
+  title        =  {O que é LLM? (Large Language Model)},
+  year        =  {2023},
+  month      = {November},
+
+  url          =  {https://www.ibm.com/br-pt/think/topics/large-language-models}
+}
+
+@misc{nvidiaTransformer,
+  author       =  {Rick Merrit},
+  title        =  {O que é um Modelo Transformer?},
+  year        =  {2022},
+  month      = {April},
+
+  url          =  {https://www.ibm.com/br-pt/think/topics/large-language-models}
+}
+
+@misc{ibmKG,
+  author       =  {IBM},
+  title        =  {O que é um gráfico de conhecimento?},
+  month        =  {feb},
+  year         =  {2025},
+  url          =  {https://www.ibm.com/br-pt/think/topics/knowledge-graph}
+}
+
+@misc{zhang2025diagnosingaddressingpitfallskgrag,
+      title={Diagnosing and Addressing Pitfalls in KG-RAG Datasets: Toward More Reliable Benchmarking}, 
+      author={Liangliang Zhang and Zhuorui Jiang and Hongliang Chi and Haoyang Chen and Mohammed Elkoumy and Fali Wang and Qiong Wu and Zhengyi Zhou and Shirui Pan and Suhang Wang and Yao Ma},
+      year={2025},
+      eprint={2505.23495},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2505.23495}, 
+}
+
+@misc{agrawal2024knowledgegraphsreducehallucinations,
+      title={Can Knowledge Graphs Reduce Hallucinations in LLMs? : A Survey}, 
+      author={Garima Agrawal and Tharindu Kumarage and Zeyad Alghamdi and Huan Liu},
+      year={2024},
+      eprint={2311.07914},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2311.07914}, 
+}
+
+%exemplo de uma lei
+@misc{Lei7565,
+  author       = {BRASIL},
+  title        = {Lei nº 7.565, de 19 de dezembro de 1986},
+  howpublished = {Dispõe sobre o Código Brasileiro de Aeronáutica. Diário Oficial da União: seção 1, Brasília, DF, 22 dez. 1986. Disponível em: \url{https://www.planalto.gov.br/ccivil_03/Leis/L7565compilado.htm}. Accessed: 30 dec. 2024.},
+  year         = {1986},
+  month        = {December},
+  note         = {Inclui alterações pelos Decretos nº 95.218/1987, nº 3.439/2000, nº 8.265/2014 e pela Lei nº 12.432/2011.}
+}
+
+%exemplo de uma norma
+@misc{RBAC154,
+  author       = {{AGÊNCIA NACIONAL DE AVIAÇÃO CIVIL}},
+  title        = {Regulamento Brasileiro da Aviação Civil - RBAC nº 154: Projeto de Aeródromos},
+  howpublished = {Aprovado pela Resolução nº 93, de 11.05.2009, com alterações posteriores até a Emenda nº 08, aprovada pela Resolução nº 751, de 10.07.2024. Available at: \url{https://www.anac.gov.br/assuntos/legislacao/legislacao-1/rbha-e-rbac/rbac/rbac-154}. Accessed: 31 dec. 2024.},
+  year         = {2024},
+  month        = {September}
+}
+
+
+%|--patent---|
+%for author use the Applicant
+%country where the patent is registered
+
+@patent{Aerofolio2024,
+  author       = {{R.E.M. PATENTS S.R.L.}},
+  title        = {Aerofólio e superfície fluidodinâmica compreendendo tal aerofólio},
+  patent_numb  = {BR 11 2024 021637 3 A2},
+  year         = {2024},
+  
+  datefiled    = {18/04/2023},
+  datepub      = {29/10/2024},
+  inventor     = {{MOSIEWICZ ROBERTO EDUARDO}},
+  attorney     = {Ariboni, Fabbri e Schmidt Sociedade de Advogados},
+  country      = {Brazil},
+  wo           = {2023/203475},
+  pct          = {IB2023053946},
+  priority     = {102022000007814},
+  note         = {Classificação IPC: B64C 3/28; B64C 11/18; B64C 27/473; F03D 1/06}
+}
+
+
+
+%|--phdthesis---|
+
+@phdthesis{Aferri2024,
+  author       = {Homero Carneiro Aferri},
+  title        = {Pharyngeal bulb reduction program in individuals with cleft palate},
+  school       = {Hospital de Reabilitação de Anomalias Craniofaciais, Universidade de São Paulo},
+  year         = {2024},
+  address      = {Bauru},
+  type         = {Tese de Doutorado},
+  note         = {Doutorado em Fissuras Orofaciais e Anomalias Relacionadas},
+  doi          = {10.11606/T.61.2024.tde-04102024-110448},
+  url          = {https://www.teses.usp.br/teses/disponiveis/61/61132/tde-04102024-110448/pt-br.php}
+}
+
+
+%--techreport---
+
+@techreport{schroeder2024,
+  author       = {Katherine Schroeder and Hung Trinh and Victoria Yan Pillitteri},
+  title        = {Measurement Guide for Information Security Volume 1 -- Identifying and Selecting Measures},
+  series       = {NIST Special Publication},
+  number       = {800-55v1},
+  institution  = {National Institute of Standards and Technology},
+  address      = {Gaithersburg, MD},
+  publisher    = {National Institute of Standards and Technology},
+  year         = {2024},
+  month        = {December},
+  doi          = {10.6028/NIST.SP.800-55v1},
+  url          ={https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-55v1.pdf},
+  note         = {Accessed December 28, 2024}
+}
+
+@software{ChatGPT2023,
+  author       = {{OpenAI}},
+  title        = {ChatGPT},
+  year         = {2023},
+  note         = {Version of 14 March. Large language model.},
+  url          = {https://chat.openai.com}
+}
+
+@inproceedings{devlin-etal-2019-bert,
+    title     = "{BERT}: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    author    = "Devlin, Jacob  and
+               Chang, Ming-Wei  and
+               Lee, Kenton  and
+               Toutanova, Kristina",
+    booktitle = "Proceedings of the 2019 Conference of the North {A}merican Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)",
+    month     = jun,
+    year      = "2019",
+    address   = "Minneapolis, Minnesota",
+    publisher = "Association for Computational Linguistics",
+    url       = "https://aclanthology.org/N19-1423",
+    pages     = "4171--4186",
+}
+
+@article{touvron2023llama,
+  title     = {LLaMA: Open and Efficient Foundation Language Models},
+  author    = {Touvron, Hugo and Lavril, Thibaut and Izacard, Gautier and Martinet, Xavier and Lachaux, Marie-Anne and Lacroix, Timoth{\'e}e and Rozi{\`e}re, Baptiste and Goyal, Naman and Hambro, Eric and Azhar, Faisal and Rodriguez, Aurelien and Joulin, Armand and Grave, Edouard and Lample, Guillaume},
+  journal   = {arXiv preprint arXiv:2302.13971},
+  year      = {2023}
+}
+
+@software{LangChain2023,
+  author       = {{Chase, Harrison}},
+  title        = {LangChain},
+  year         = {2023},
+  publisher    = {GitHub},
+  journal      = {GitHub repository},
+  url          = {https://github.com/langchain-ai/langchain}
+}
+
+@misc{Neo4j2024,
+  title        = {Neo4j Graph Database},
+  author       = {{Neo4j, Inc.}},
+  year         = {2024},
+  note         = {Version 5. Accessed 10 June 2025},
+  url          = {https://neo4j.com}
+}
+
+@incollection{Smith2012Ontology,
+  author = {Smith, Barry},
+  title = {Ontology},
+  booktitle = {The Furniture of the World: Essays in Ontology and Metaphysics},
+  editors = {Guillermo Hurtado and Oscar Nudler},
+  publisher = {Editions Rodopi},
+  year = {2012},
+  pages = {1--20}
+}
+
+@incollection{Smith2003Ontology,
+  author = {Smith, Barry},
+  title = {Ontology},
+  booktitle = {The Blackwell guide to the philosophy of computing and information},
+  editor = {Luciano Floridi},
+  publisher = {Blackwell},
+  year = {2003},
+  pages = {155--166}
+}
+
+@incollection{Smith2014Relevance,
+  author = {Smith, Barry},
+  title = {The Relevance of Philosophical Ontology to Information and Computer Science},
+  booktitle = {Philosophy, Computing and Information Science},
+  editors = {Ruth Hagengruber and Uwe Riss},
+  publisher = {Pickering and Chatto},
+  year = {2014},
+  pages = {75--83}
+}
+
+
+%====== Added: peer-reviewed / English primary sources (camera-ready revision) ======
+
+@inproceedings{vaswani2017attention,
+  title     = {Attention is All You Need},
+  author    = {Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N. and Kaiser, {\L}ukasz and Polosukhin, Illia},
+  booktitle = {Advances in Neural Information Processing Systems 30 (NIPS 2017)},
+  year      = {2017},
+  pages     = {5998--6008},
+  url       = {https://proceedings.neurips.cc/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html},
+}
+
+@inproceedings{brown2020language,
+  title     = {Language Models are Few-Shot Learners},
+  author    = {Brown, Tom B. and Mann, Benjamin and Ryder, Nick and Subbiah, Melanie and Kaplan, Jared and Dhariwal, Prafulla and Neelakantan, Arvind and Shyam, Pranav and Sastry, Girish and Askell, Amanda and others},
+  booktitle = {Advances in Neural Information Processing Systems 33 (NeurIPS 2020)},
+  year      = {2020},
+  pages     = {1877--1901},
+  url       = {https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html},
+}
+
+@techreport{openai2023gpt4,
+  title       = {{GPT-4} Technical Report},
+  author      = {{OpenAI}},
+  institution = {OpenAI},
+  year        = {2023},
+  number      = {arXiv:2303.08774},
+  doi         = {10.48550/arXiv.2303.08774},
+  url         = {https://arxiv.org/abs/2303.08774},
+}
+
+@article{hogan2021knowledge,
+  title   = {Knowledge Graphs},
+  author  = {Hogan, Aidan and Blomqvist, Eva and Cochez, Michael and d'Amato, Claudio and Melo, Gerard de and Gutierrez, Claudio and Kirrane, Sabrina and Gayo, Jos{\'e} Emilio Labra and Navigli, Roberto and Neumaier, Sebastian and Ngomo, Axel-Cyrille Ngonga and Polleres, Axel and Rashid, Sabbir M. and Rula, Anisa and Schmelzeisen, Lukas and Sequeda, Juan and Staab, Steffen and Zimmermann, Antoine},
+  journal = {ACM Computing Surveys},
+  volume  = {54},
+  number  = {4},
+  pages   = {1--37},
+  year    = {2021},
+  doi     = {10.1145/3447772},
+  url     = {https://dl.acm.org/doi/10.1145/3447772},
+}
+
+@book{diestel2017graph,
+  title     = {Graph Theory},
+  author    = {Diestel, Reinhard},
+  edition   = {5th},
+  series    = {Graduate Texts in Mathematics},
+  volume    = {173},
+  publisher = {Springer},
+  year      = {2017},
+  doi       = {10.1007/978-3-662-53622-3},
+}
+
+
+%====== Added: statistical-method references (camera-ready revision) ======
+@article{wilson1927,
+  author  = {Wilson, Edwin B.},
+  title   = {Probable Inference, the Law of Succession, and Statistical Inference},
+  journal = {Journal of the American Statistical Association},
+  volume  = {22}, number = {158}, pages = {209--212}, year = {1927},
+  doi     = {10.1080/01621459.1927.10502953},
+}
+@article{mcnemar1947,
+  author  = {McNemar, Quinn},
+  title   = {Note on the Sampling Error of the Difference between Correlated Proportions or Percentages},
+  journal = {Psychometrika},
+  volume  = {12}, number = {2}, pages = {153--157}, year = {1947},
+  doi     = {10.1007/BF02295996},
+}
+@article{cohen1960,
+  author  = {Cohen, Jacob},
+  title   = {A Coefficient of Agreement for Nominal Scales},
+  journal = {Educational and Psychological Measurement},
+  volume  = {20}, number = {1}, pages = {37--46}, year = {1960},
+  doi     = {10.1177/001316446002000104},
+}

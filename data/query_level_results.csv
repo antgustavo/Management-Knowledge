@@ -1,0 +1,286 @@
+config,id,query_class,query_correct,generated_executed
+GPT-4,1,Single-hop,0,1
+GPT-4,2,Single-hop,0,1
+GPT-4,3,Single-hop,0,1
+GPT-4,4,Single-hop,1,1
+GPT-4,5,Single-hop,0,1
+GPT-4,6,Single-hop,0,1
+GPT-4,7,Single-hop,0,1
+GPT-4,8,Single-hop,0,1
+GPT-4,9,Single-hop,0,1
+GPT-4,10,Single-hop,0,1
+GPT-4,11,Single-hop,0,1
+GPT-4,12,Multi-pattern,1,1
+GPT-4,13,Single-hop,0,1
+GPT-4,14,Multi-pattern,0,1
+GPT-4,15,Single-hop,0,1
+GPT-4,16,Single-hop,0,1
+GPT-4,17,Single-hop,0,1
+GPT-4,18,Single-hop,0,1
+GPT-4,19,Single-hop,0,1
+GPT-4,20,Property lookup,0,1
+GPT-4,21,Single-hop,0,1
+GPT-4,22,Property lookup,0,1
+GPT-4,23,Single-hop,1,1
+GPT-4,24,Single-hop,0,1
+GPT-4,25,Single-hop,0,1
+GPT-4,26,Single-hop,0,1
+GPT-4,27,Multi-pattern,0,1
+GPT-4,28,Single-hop,0,1
+GPT-4,29,Property lookup,0,1
+GPT-4,30,Single-hop,1,1
+GPT-4,31,Single-hop,0,1
+GPT-4,32,Single-hop,1,1
+GPT-4,33,Single-hop,0,1
+GPT-4,34,Single-hop,0,1
+GPT-4,35,Single-hop,0,1
+GPT-4,36,Single-hop,0,1
+GPT-4,37,Property lookup,0,1
+GPT-4,38,Single-hop,0,1
+GPT-4,39,Single-hop,0,1
+GPT-4,40,Property lookup,0,1
+GPT-4,41,Single-hop,0,1
+GPT-4,42,Single-hop,0,1
+GPT-4,43,Property lookup,0,1
+GPT-4,44,Multi-pattern,0,1
+GPT-4,45,Property lookup,0,1
+GPT-4,46,Single-hop,0,1
+GPT-4,47,Single-hop,0,1
+GPT-4,48,Single-hop,0,1
+GPT-4,49,Single-hop,0,1
+GPT-4,50,Single-hop,0,1
+GPT-4,51,Property lookup,0,1
+GPT-4,52,Single-hop,1,1
+GPT-4,53,Single-hop,0,1
+GPT-4,54,Single-hop,0,1
+GPT-4,55,Single-hop,0,1
+GPT-4,56,Property lookup,0,0
+GPT-4,57,Single-hop,0,1
+GPT-4,58,Single-hop,0,1
+GPT-4,59,Single-hop,0,1
+GPT-4,60,Single-hop,0,1
+GPT-4,61,Single-hop,0,1
+GPT-4,62,Multi-pattern,0,1
+GPT-4,63,Single-hop,0,1
+GPT-4,64,Single-hop,0,1
+GPT-4,65,Single-hop,0,1
+GPT-4,66,Single-hop,0,1
+GPT-4,67,Property lookup,0,1
+GPT-4,68,Single-hop,1,1
+GPT-4,69,Single-hop,0,1
+GPT-4,70,Single-hop,1,1
+GPT-4,71,Property lookup,0,1
+GPT-4,72,Single-hop,0,1
+GPT-4,73,Single-hop,0,1
+GPT-4,74,Property lookup,0,1
+GPT-4,75,Single-hop,0,1
+GPT-4,76,Single-hop,0,1
+GPT-4,77,Single-hop,0,1
+GPT-4,78,Property lookup,0,1
+GPT-4,79,Single-hop,0,1
+GPT-4,80,Property lookup,0,0
+GPT-4,81,Single-hop,0,1
+GPT-4,82,Single-hop,0,1
+GPT-4,83,Multi-pattern,0,1
+GPT-4,84,Single-hop,1,1
+GPT-4,85,Property lookup,0,1
+GPT-4,86,Single-hop,0,1
+GPT-4,87,Single-hop,0,1
+GPT-4,88,Single-hop,1,1
+GPT-4,89,Single-hop,0,1
+GPT-4,90,Property lookup,1,1
+GPT-4,91,Single-hop,0,1
+GPT-4,92,Property lookup,1,1
+GPT-4,93,Single-hop,0,1
+GPT-4,94,Aggregation,0,1
+GPT-4,95,Property lookup,0,1
+HF27B,1,Single-hop,0,1
+HF27B,2,Single-hop,0,1
+HF27B,3,Single-hop,0,1
+HF27B,4,Single-hop,1,1
+HF27B,5,Single-hop,0,1
+HF27B,6,Single-hop,0,1
+HF27B,7,Single-hop,0,1
+HF27B,8,Single-hop,0,1
+HF27B,9,Single-hop,0,1
+HF27B,10,Single-hop,0,1
+HF27B,11,Single-hop,0,1
+HF27B,12,Multi-pattern,1,1
+HF27B,13,Single-hop,0,1
+HF27B,14,Multi-pattern,0,1
+HF27B,15,Single-hop,0,1
+HF27B,16,Single-hop,0,1
+HF27B,17,Single-hop,0,1
+HF27B,18,Single-hop,0,1
+HF27B,19,Single-hop,0,1
+HF27B,20,Property lookup,0,1
+HF27B,21,Single-hop,0,1
+HF27B,22,Property lookup,0,1
+HF27B,23,Single-hop,1,1
+HF27B,24,Single-hop,0,1
+HF27B,25,Single-hop,0,1
+HF27B,26,Single-hop,0,1
+HF27B,27,Multi-pattern,0,1
+HF27B,28,Single-hop,0,1
+HF27B,29,Property lookup,0,1
+HF27B,30,Single-hop,1,1
+HF27B,31,Single-hop,0,1
+HF27B,32,Single-hop,1,1
+HF27B,33,Single-hop,0,1
+HF27B,34,Single-hop,0,1
+HF27B,35,Single-hop,0,1
+HF27B,36,Single-hop,1,1
+HF27B,37,Property lookup,0,1
+HF27B,38,Single-hop,0,1
+HF27B,39,Single-hop,0,1
+HF27B,40,Property lookup,0,1
+HF27B,41,Single-hop,0,1
+HF27B,42,Single-hop,0,1
+HF27B,43,Property lookup,0,1
+HF27B,44,Multi-pattern,1,1
+HF27B,45,Property lookup,0,1
+HF27B,46,Single-hop,0,1
+HF27B,47,Single-hop,0,1
+HF27B,48,Single-hop,0,1
+HF27B,49,Single-hop,0,1
+HF27B,50,Single-hop,0,1
+HF27B,51,Property lookup,0,1
+HF27B,52,Single-hop,1,1
+HF27B,53,Single-hop,0,1
+HF27B,54,Single-hop,0,1
+HF27B,55,Single-hop,0,1
+HF27B,56,Single-hop,0,1
+HF27B,57,Single-hop,0,1
+HF27B,58,Single-hop,0,1
+HF27B,59,Single-hop,0,1
+HF27B,60,Single-hop,0,1
+HF27B,61,Single-hop,0,1
+HF27B,62,Multi-pattern,0,1
+HF27B,63,Single-hop,0,1
+HF27B,64,Single-hop,0,1
+HF27B,65,Single-hop,1,1
+HF27B,66,Single-hop,0,1
+HF27B,67,Property lookup,0,1
+HF27B,68,Single-hop,1,1
+HF27B,69,Single-hop,0,1
+HF27B,70,Single-hop,1,1
+HF27B,71,Property lookup,0,1
+HF27B,72,Single-hop,0,1
+HF27B,73,Single-hop,0,1
+HF27B,74,Property lookup,0,1
+HF27B,75,Single-hop,0,1
+HF27B,76,Single-hop,0,1
+HF27B,77,Single-hop,0,1
+HF27B,78,Property lookup,0,1
+HF27B,79,Single-hop,0,1
+HF27B,80,Property lookup,0,1
+HF27B,81,Single-hop,0,1
+HF27B,82,Single-hop,1,1
+HF27B,83,Multi-pattern,0,1
+HF27B,84,Single-hop,1,1
+HF27B,85,Property lookup,0,1
+HF27B,86,Single-hop,1,1
+HF27B,87,Single-hop,0,1
+HF27B,88,Single-hop,1,1
+HF27B,89,Single-hop,0,1
+HF27B,90,Property lookup,1,1
+HF27B,91,Single-hop,0,1
+HF27B,92,Property lookup,0,1
+HF27B,93,Single-hop,0,1
+HF27B,94,Aggregation,0,1
+HF27B,95,Property lookup,0,1
+Hybrid,1,Single-hop,0,1
+Hybrid,2,Single-hop,0,1
+Hybrid,3,Single-hop,0,1
+Hybrid,4,Single-hop,1,1
+Hybrid,5,Single-hop,0,1
+Hybrid,6,Single-hop,0,1
+Hybrid,7,Single-hop,0,1
+Hybrid,8,Single-hop,0,1
+Hybrid,9,Single-hop,0,1
+Hybrid,10,Single-hop,0,1
+Hybrid,11,Single-hop,0,1
+Hybrid,12,Multi-pattern,1,1
+Hybrid,13,Single-hop,0,1
+Hybrid,14,Multi-pattern,0,1
+Hybrid,15,Single-hop,0,1
+Hybrid,16,Single-hop,0,1
+Hybrid,17,Single-hop,0,1
+Hybrid,18,Single-hop,0,1
+Hybrid,19,Single-hop,0,1
+Hybrid,20,Property lookup,0,1
+Hybrid,21,Single-hop,0,1
+Hybrid,22,Property lookup,0,1
+Hybrid,23,Single-hop,1,1
+Hybrid,24,Single-hop,0,1
+Hybrid,25,Single-hop,0,1
+Hybrid,26,Single-hop,0,1
+Hybrid,27,Multi-pattern,0,1
+Hybrid,28,Single-hop,0,1
+Hybrid,29,Property lookup,0,1
+Hybrid,30,Single-hop,1,1
+Hybrid,31,Single-hop,0,1
+Hybrid,32,Single-hop,1,1
+Hybrid,33,Single-hop,0,1
+Hybrid,34,Single-hop,0,1
+Hybrid,35,Single-hop,0,1
+Hybrid,36,Single-hop,1,1
+Hybrid,37,Property lookup,0,1
+Hybrid,38,Single-hop,0,1
+Hybrid,39,Single-hop,0,1
+Hybrid,40,Property lookup,0,1
+Hybrid,41,Single-hop,0,1
+Hybrid,42,Single-hop,0,1
+Hybrid,43,Property lookup,0,1
+Hybrid,44,Multi-pattern,1,1
+Hybrid,45,Property lookup,0,1
+Hybrid,46,Single-hop,0,1
+Hybrid,47,Single-hop,0,1
+Hybrid,48,Single-hop,0,1
+Hybrid,49,Single-hop,0,1
+Hybrid,50,Single-hop,0,1
+Hybrid,51,Property lookup,0,1
+Hybrid,52,Single-hop,1,1
+Hybrid,53,Single-hop,0,1
+Hybrid,54,Single-hop,0,1
+Hybrid,55,Single-hop,0,1
+Hybrid,56,Single-hop,0,1
+Hybrid,57,Single-hop,0,1
+Hybrid,58,Single-hop,0,1
+Hybrid,59,Single-hop,0,1
+Hybrid,60,Single-hop,0,1
+Hybrid,61,Single-hop,0,1
+Hybrid,62,Multi-pattern,0,1
+Hybrid,63,Single-hop,0,1
+Hybrid,64,Single-hop,0,1
+Hybrid,65,Single-hop,1,1
+Hybrid,66,Single-hop,0,1
+Hybrid,67,Property lookup,0,1
+Hybrid,68,Single-hop,1,1
+Hybrid,69,Single-hop,0,1
+Hybrid,70,Single-hop,1,1
+Hybrid,71,Property lookup,0,1
+Hybrid,72,Single-hop,0,1
+Hybrid,73,Single-hop,0,1
+Hybrid,74,Property lookup,0,1
+Hybrid,75,Single-hop,0,1
+Hybrid,76,Single-hop,0,1
+Hybrid,77,Single-hop,0,1
+Hybrid,78,Property lookup,0,1
+Hybrid,79,Single-hop,0,1
+Hybrid,80,Property lookup,0,1
+Hybrid,81,Single-hop,0,1
+Hybrid,82,Single-hop,1,1
+Hybrid,83,Multi-pattern,0,1
+Hybrid,84,Single-hop,1,1
+Hybrid,85,Property lookup,0,1
+Hybrid,86,Single-hop,1,1
+Hybrid,87,Single-hop,0,1
+Hybrid,88,Single-hop,1,1
+Hybrid,89,Single-hop,0,1
+Hybrid,90,Property lookup,1,1
+Hybrid,91,Single-hop,0,1
+Hybrid,92,Property lookup,0,1
+Hybrid,93,Single-hop,0,1
+Hybrid,94,Aggregation,0,1
+Hybrid,95,Property lookup,0,1
